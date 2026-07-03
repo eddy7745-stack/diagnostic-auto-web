@@ -1,0 +1,1677 @@
+[
+  {
+    "brand": "RENAULT",
+    "model": "Clio II (1998-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction, au-dessus de la pédale de frein",
+    "location_en": "Under dashboard, driver side, left of steering column, above brake pedal",
+    "notes": "Peut nécessiter de retirer un cache plastique"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Clio III (2005-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, en dessous de la colonne de direction, à droite de la pédale de frein",
+    "location_en": "Under dashboard, driver side, below steering column, right of brake pedal",
+    "notes": "Prise souvent visible sans démontage"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Clio IV (2012-2019)",
+    "location_fr": "Sous le cache situé en haut de la console centrale, côté conducteur",
+    "location_en": "Under cover at the top of the center console, driver side",
+    "notes": "Cache à pression sur le dessus de la console centrale"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Clio V (2019-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Mégane II (2002-2009)",
+    "location_fr": "Derrière un cache plastique en bas de la console centrale, juste sous l'emplacement de la carte (keycard)",
+    "location_en": "Behind plastic cover at bottom of center console, just below keycard slot",
+    "notes": "Cache à ouvrir par pression"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Mégane III (2008-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction, protégé par un cache plastique",
+    "location_en": "Under dashboard, driver side, near steering column, behind plastic cover",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Mégane IV (2016-2022)",
+    "location_fr": "En bas de la console centrale, sous les commandes radio/chauffage, côté conducteur",
+    "location_en": "Bottom of center console, below radio/heater controls, driver side",
+    "notes": "Sur LHD, peut aussi être sur le panneau latéral du pied gauche sous le tableau de bord"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Laguna II (2001-2007)",
+    "location_fr": "Dans la console centrale, accessible en retirant le cendrier (sous le volet inférieur), derrière un cache plastique noir",
+    "location_en": "In center console, accessible by removing ashtray (under lower flap), behind black plastic cover",
+    "notes": "Prise EOBD cachée derrière le cendrier"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Laguna III (2007-2016)",
+    "location_fr": "Sous l'accoudoir central ou sous le tableau de bord côté conducteur, selon l'équipement",
+    "location_en": "Under center armrest or under dashboard driver side, depending on trim level",
+    "notes": "Deux emplacements possibles selon le modèle. Sur Estate: souvent sous le tableau de bord côté conducteur"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Kangoo I (1997-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Kangoo II (2007-2021)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": "Les versions post-2018 peuvent avoir la prise légèrement plus haute"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Kangoo III (2021-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Espace IV/V/VI",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": "Espace VI (2023+) : sous le volant côté gauche, juste derrière la commande de capot"
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Scenic III (2009-2016)",
+    "location_fr": "Sous le volant, côté gauche, juste derrière la commande d'ouverture du capot",
+    "location_en": "Under steering wheel, left side, just behind hood release lever",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Captur I (2013-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant à gauche",
+    "location_en": "Under dashboard, driver side, under steering wheel on the left",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Kadjar (2015-)",
+    "location_fr": "Sous le volant, côté gauche du tableau de bord",
+    "location_en": "Under steering wheel, left side of dashboard",
+    "notes": ""
+  },
+  {
+    "brand": "RENAULT",
+    "model": "Zoe (2012-)",
+    "location_fr": "Dans le coin inférieur gauche du tableau de bord, près de la console centrale, côté conducteur",
+    "location_en": "Lower left corner of dashboard, near center console, driver side",
+    "notes": "Peut être caché près de la prise 12V, nécessite de se pencher"
+  },
+
+  {
+    "brand": "PEUGEOT",
+    "model": "206 (1998-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, left under steering column",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "207 (2006-2012)",
+    "location_fr": "Sous le bandeau inférieur du tableau de bord, côté conducteur (gauche)",
+    "location_en": "Under lower dashboard trim, driver side (left)",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "208 I (2012-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, derrière un petit cache près du genou du conducteur",
+    "location_en": "Under dashboard, driver side, behind small panel near driver's knee",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "208 II (2019-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, derrière un cache près du genou du conducteur",
+    "location_en": "Under dashboard, driver side, behind cover near driver's knee",
+    "notes": "Modèle électrique (e-208) : même emplacement"
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "306 (1993-2002)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "307 (2001-2008)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "308 I/II (2007-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, below steering column",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "406 (1995-2004)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "407 (2004-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "508 (2011-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction, accessible sans démontage",
+    "location_en": "Under dashboard, driver side, near steering column, accessible without removal",
+    "notes": "Environ 15-20 cm à droite de la pédale de frein, 10 cm au-dessus du plancher"
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "2008 (2013-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "3008 (2008-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, below steering column",
+    "notes": ""
+  },
+  {
+    "brand": "PEUGEOT",
+    "model": "5008 (2009-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, environ 15 cm à droite de la pédale de frein, 10 cm au-dessus du plancher",
+    "location_en": "Under dashboard, driver side, about 6 inches right of brake pedal, 4 inches above floor",
+    "notes": "Cache plastique enclipsé"
+  },
+
+  {
+    "brand": "CITROEN",
+    "model": "C2 (2003-2009)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous le volant",
+    "location_en": "Under dashboard, driver side, left under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C3 I (2002-2009)",
+    "location_fr": "Sous le volant, côté conducteur, à gauche",
+    "location_en": "Under steering wheel, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C3 II (2009-2016)",
+    "location_fr": "Sous le volant, côté conducteur",
+    "location_en": "Under steering wheel, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C3 III (2016-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous le volant",
+    "location_en": "Under dashboard, driver side, left under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C4 I (2004-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C4 II (2011-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C4 III (2020-)",
+    "location_fr": "Au-dessus du repose-pied, côté conducteur",
+    "location_en": "Above the footrest, driver side",
+    "notes": "Emplacement inhabituel : en haut à gauche des pédales"
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C5 I/II (2001-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "C6 (2005-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "Berlingo I (1996-2008)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "Berlingo II (2008-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "Berlingo III (2018-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "Picasso / C4 Picasso (2004-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "DS3 (2010-2016)",
+    "location_fr": "Sous le bandeau inférieur du tableau de bord, côté gauche (conducteur)",
+    "location_en": "Under lower dashboard trim, left side (driver)",
+    "notes": "Prise de diagnostic sous la planche de bord côté conducteur"
+  },
+  {
+    "brand": "CITROEN",
+    "model": "DS4 (2011-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "CITROEN",
+    "model": "DS5 (2011-2018)",
+    "location_fr": "Dans le compartiment de rangement sous l'accoudoir de la console centrale",
+    "location_en": "In storage compartment under center console armrest",
+    "notes": "Emplacement inhabituel : sous l'accoudoir central"
+  },
+
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Golf IV (1997-2004)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Golf V (2004-2009)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction, derrière un cache enclipsé",
+    "location_en": "Under dashboard, driver side, left of steering column, behind clip-on cover",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Golf VI (2008-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Golf VII/VIII (2012-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, coin inférieur gauche, derrière un cache",
+    "location_en": "Under dashboard, driver side, lower left corner, behind a cover",
+    "notes": "Cache rectangulaire à retirer côté gauche du tableau de bord"
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Polo V (2009-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Passat B6 (2005-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Passat B7 (2010-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Tiguan (2007-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": "Visible directement, parfois caché derrière une petite trappe"
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Tiguan II (2016-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, derrière un cache",
+    "location_en": "Under dashboard, driver side, behind a cover",
+    "notes": "Prise parfois colorée en violet/magenta"
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Touareg (2002-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Touareg II (2010-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Sharan (2000-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Sharan II (2010-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Transporter T5 (2003-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": "Modèles post-2001 : prise sous le tableau de bord côté conducteur"
+  },
+  {
+    "brand": "VOLKSWAGEN",
+    "model": "Transporter T6 (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "AUDI",
+    "model": "A3 (8L/8P/8V)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, coin inférieur gauche, à droite de la commande de capot",
+    "location_en": "Under dashboard, driver side, lower left corner, right of hood release",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "A4 B7 (2004-2008)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "A4 B8 (2008-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "A5 (8T) (2007-2016)",
+    "location_fr": "Sous le tableau de bord, coin inférieur gauche, à droite de la commande de capot",
+    "location_en": "Under dashboard, lower left corner, right of hood release",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "A6 C7 (2011-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à côté du frein de parking d'urgence",
+    "location_en": "Under dashboard, driver side, next to emergency parking brake",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "A7 / A8 (D4)",
+    "location_fr": "Au-dessus des pédales, côté gauche du conducteur",
+    "location_en": "Above the pedals, left side driver area",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "Q3 (8U) (2011-2018)",
+    "location_fr": "Au-dessus de la pédale de frein, côté conducteur",
+    "location_en": "Above the brake pedal, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "Q5 (8R) (2008-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale de frein",
+    "location_en": "Under dashboard, driver side, above brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "Q7 (4L) (2006-2015)",
+    "location_fr": "Sous le volant, près du frein à pied d'urgence",
+    "location_en": "Under steering wheel, near emergency foot brake",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "Q7 (4M) (2015-)",
+    "location_fr": "Sous le volant, à gauche des pédales",
+    "location_en": "Under steering wheel, left of pedals",
+    "notes": ""
+  },
+  {
+    "brand": "AUDI",
+    "model": "TT (8N/8J/8S)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+
+  {
+    "brand": "BMW",
+    "model": "Série 1 E87 (2004-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche au-dessus de la commande de capot",
+    "location_en": "Under dashboard, driver side, left above hood release lever",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 1 F20 (2011-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous le volant",
+    "location_en": "Under dashboard, driver side, left under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 1 F40 (2019-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 2 (F22/F45/F46)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous le volant",
+    "location_en": "Under dashboard, driver side, left under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 3 E90 (2005-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous le volant",
+    "location_en": "Under dashboard, driver side, left under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 3 F30 (2012-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant à gauche",
+    "location_en": "Under dashboard, driver side, under steering wheel on the left",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 3 G20 (2019-)",
+    "location_fr": "En haut à gauche sous le volant, côté conducteur",
+    "location_en": "Top left under steering wheel, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 4 (F32/F36)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 5 E60 (2003-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 5 F10 (2010-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 6 (E63/F13)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "Série 7 (E65/F01/G11)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X1 E84 (2009-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X1 F48 (2015-2022)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X3 E83 (2003-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X3 F25 (2010-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X3 G01 (2017-)",
+    "location_fr": "À gauche des pédales, côté conducteur",
+    "location_en": "Left of pedals, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "BMW",
+    "model": "X5 (E53/E70/F15)",
+    "location_fr": "Sous le tableau de bord, au-dessus de la pédale de frein, côté conducteur",
+    "location_en": "Under dashboard, above brake pedal, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "MERCEDES",
+    "model": "Classe A W168 (1997-2004)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale d'accélérateur, sous un cache enclipsé",
+    "location_en": "Under dashboard, driver side, above accelerator pedal, under snap-on cap",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe A W169 (2004-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale d'accélérateur",
+    "location_en": "Under dashboard, driver side, above accelerator pedal",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe A W176 (2012-2018) / W177 (2018-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, intégré dans la structure du tableau de bord",
+    "location_en": "Under dashboard, driver side, integrated in dashboard structure",
+    "notes": "Peut nécessiter de déplacer les tapis de sol ou le cache genou"
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe B (W245/W246/W247)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe C W203 (2000-2007)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la pédale de frein",
+    "location_en": "Under dashboard, driver side, near brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe C W204/W205 (2007-2021)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale de frein",
+    "location_en": "Under dashboard, driver side, above brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe E (W211/W212/W213)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale de frein",
+    "location_en": "Under dashboard, driver side, above brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Classe S (W220/W221/W222)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la pédale de frein",
+    "location_en": "Under dashboard, driver side, near brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "GLA (X156/X247)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, accessible sans outils depuis le siège",
+    "location_en": "Under dashboard, driver side, accessible without tools from seated position",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "GLC (W253)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction, sous un cache",
+    "location_en": "Under dashboard, driver side, near steering column, under a cover",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "GLE (W166/W167)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Sprinter 903 (1995-2006)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Sprinter 906 (2006-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant",
+    "location_en": "Under dashboard, driver side, under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Sprinter 907 (2018-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Vito W639 (2003-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MERCEDES",
+    "model": "Vito W447 (2014-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "TOYOTA",
+    "model": "Yaris I (1999-2005)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la commande de capot à gauche",
+    "location_en": "Under dashboard, driver side, below hood release lever on the left",
+    "notes": "Prise blanche généralement"
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Yaris II/III (2005-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la commande de capot à gauche",
+    "location_en": "Under dashboard, driver side, below hood release lever on the left",
+    "notes": ""
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Corolla (E110/E120/E150/E180)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, near steering column, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Auris (E150/E180) (2006-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale d'accélérateur",
+    "location_en": "Under dashboard, driver side, above accelerator pedal",
+    "notes": ""
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Avensis (T22/T25/T27) (1997-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, near steering column, above pedals",
+    "notes": "T25 (2003-2009) : dans le coin pied côté conducteur, au-dessus de l'accélérateur"
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "RAV4 (XA20/XA30/XA40) (2000-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la commande de capot à gauche",
+    "location_en": "Under dashboard, driver side, below hood release lever on the left",
+    "notes": ""
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Land Cruiser (J90/J100/J200)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Prius II (2003-2009)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": "Connecteur généralement blanc"
+  },
+  {
+    "brand": "TOYOTA",
+    "model": "Prius III/IV (2009-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+
+  {
+    "brand": "HONDA",
+    "model": "Civic 7th gen (2001-2005)",
+    "location_fr": "Au-dessus des pédales, côté droit (pédale d'accélérateur)",
+    "location_en": "Above the pedals, right side (accelerator pedal side)",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "Civic 8th gen (2006-2011)",
+    "location_fr": "Sous les pédales, derrière un cache plastique sous la pédale",
+    "location_en": "Under the pedals, behind plastic cover under the pedal area",
+    "notes": "Cache à retirer pour accéder à la prise"
+  },
+  {
+    "brand": "HONDA",
+    "model": "Civic 9th/10th gen (2012-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "Jazz I (2001-2008)",
+    "location_fr": "Sous le volant, côté droit (côté pédale d'accélérateur)",
+    "location_en": "Under steering wheel, right side (accelerator pedal side)",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "Jazz II (2008-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant",
+    "location_en": "Under dashboard, driver side, under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "CR-V (2nd/3rd gen) (2001-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la console centrale",
+    "location_en": "Under dashboard, driver side, near center console",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "CR-V 4th gen (2012-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus du pied droit du conducteur",
+    "location_en": "Under dashboard, driver side, above driver's right foot",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "HR-V (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant",
+    "location_en": "Under dashboard, driver side, under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "Accord (6th/7th/8th gen)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant",
+    "location_en": "Under dashboard, driver side, under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "HONDA",
+    "model": "FR-V (2004-2009)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "FORD",
+    "model": "Fiesta (2002-2008)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, below steering column",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Fiesta (2008-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Fiesta (2017-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Focus (2004-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Focus Mk3 (2011-2018)",
+    "location_fr": "Derrière le compartiment de monnaie/vide-poche côté conducteur, sous la colonne de direction",
+    "location_en": "Behind the coin holder/storage compartment, driver side, below steering column",
+    "notes": "Cache pop-out à ouvrir : tirer la trappe vers le bas côté conducteur"
+  },
+  {
+    "brand": "FORD",
+    "model": "Mondeo (MK3/MK4/MK5)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant",
+    "location_en": "Under dashboard, driver side, under steering wheel",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Galaxy (2006-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "C-Max (2010-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, below steering column",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Kuga Mk1 (2007-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FORD",
+    "model": "Kuga Mk2 (2012-2019)",
+    "location_fr": "Sous le tableau de bord côté conducteur, trappe à tirer vers le bas à droite sous le volant",
+    "location_en": "Under dashboard driver side, flap to pull down on right side below steering wheel",
+    "notes": "La trappe peut être difficile à ouvrir la première fois"
+  },
+  {
+    "brand": "FORD",
+    "model": "Transit (2000-2013)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Corsa D (2006-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Corsa E (2014-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Astra H (2004-2009)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction, derrière un cache plastique",
+    "location_en": "Under dashboard, driver side, left of steering column, behind plastic cover",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Astra J (2009-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus du genou gauche du conducteur",
+    "location_en": "Under dashboard, driver side, above driver's left knee",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Astra K (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Insignia (2008-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Zafira A (1999-2005)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Zafira B (2005-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction, derrière un cache",
+    "location_en": "Under dashboard, driver side, left of steering column, behind cover",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Zafira C (2011-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Mokka A (2012-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Vivaro A (2001-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "OPEL/VAUXHALL",
+    "model": "Vivaro B/C (2014-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "FIAT",
+    "model": "Punto II (2003-2005)",
+    "location_fr": "À gauche sous le volant, en bas de la boîte à fusibles",
+    "location_en": "Left under steering wheel, at bottom of fuse box",
+    "notes": ""
+  },
+  {
+    "brand": "FIAT",
+    "model": "Punto III / Grande Punto (2005-2018)",
+    "location_fr": "À gauche de la colonne de direction, derrière le bac de rangement",
+    "location_en": "Left of steering column, behind the storage tray",
+    "notes": "Cache plastique à retirer côté gauche du volant"
+  },
+  {
+    "brand": "FIAT",
+    "model": "500 (2007-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, derrière un cache rectangulaire",
+    "location_en": "Under dashboard, driver side, behind rectangular plastic trim",
+    "notes": "Retirer le cache rectangulaire pour accéder à la prise"
+  },
+  {
+    "brand": "FIAT",
+    "model": "Bravo (2007-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "FIAT",
+    "model": "Doblo (2001-)",
+    "location_fr": "Dans le petit compartiment en bas du tableau de bord, à droite de la colonne de direction",
+    "location_en": "In small compartment at lower part of dashboard, right of steering column",
+    "notes": "Retirer le compartiment : prise jaune facilement identifiable"
+  },
+  {
+    "brand": "FIAT",
+    "model": "Ducato (2014-)",
+    "location_fr": "Sous le volant, côté gauche, derrière un cache à deux vis",
+    "location_en": "Under steering wheel, left side, behind cover with two screws",
+    "notes": "Dévisser les deux vis du cache plastique pour accéder à la prise"
+  },
+  {
+    "brand": "FIAT",
+    "model": "Panda II (2003-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, sous le volant, derrière le cache de la boîte à fusibles",
+    "location_en": "Under dashboard, driver side, under steering wheel, behind fuse box cover",
+    "notes": "Dévisser deux vis du carter pour accéder ; prise blanche"
+  },
+  {
+    "brand": "FIAT",
+    "model": "Panda III (2012-)",
+    "location_fr": "Sous le tableau de bord inférieur côté conducteur, sous le volant ; prise noire avec bord fluorescent blanc",
+    "location_en": "Under lower dashboard, driver side, under steering wheel; black connector with white fluorescent border",
+    "notes": "Retirer le bandeau inférieur du tableau de bord"
+  },
+
+  {
+    "brand": "NISSAN",
+    "model": "Micra K12 (2002-2010)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Micra K13 (2010-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Micra K14 (2017-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Juke (2010-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Qashqai J10 (2007-2013)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Qashqai J11 (2014-2021)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "X-Trail T30/T31 (2001-2013)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "X-Trail T32 (2014-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Navara D22 (1997-2004)",
+    "location_fr": "Sous le tableau de bord, côté conducteur (véhicules européens depuis 2000)",
+    "location_en": "Under dashboard, driver side (European vehicles from 2000)",
+    "notes": "Certains D22 pré-2000 peuvent ne pas avoir de prise OBD2 standard"
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Navara D40 (2004-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "NISSAN",
+    "model": "Note (2005-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+
+  {
+    "brand": "KIA",
+    "model": "Ceed I (2007-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus de la pédale de frein",
+    "location_en": "Under dashboard, driver side, above brake pedal",
+    "notes": ""
+  },
+  {
+    "brand": "KIA",
+    "model": "Ceed II (2012-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "KIA",
+    "model": "Sportage (2010-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur ; sur les versions 2016-2018, à l'intérieur du cache de la boîte à fusibles",
+    "location_en": "Under dashboard, driver side; on 2016-2018 versions, inside the fuse box cover",
+    "notes": "Sportage 2016-2018 : tirer le cache fusibles pour accéder à la prise OBD2"
+  },
+  {
+    "brand": "KIA",
+    "model": "Sorento (2002-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "HYUNDAI",
+    "model": "i20 I (2008-2014)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "HYUNDAI",
+    "model": "i20 II (2014-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "HYUNDAI",
+    "model": "i30 (2007-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, directement sous la colonne de direction, exposée",
+    "location_en": "Under dashboard, driver side, directly below steering column, exposed",
+    "notes": ""
+  },
+  {
+    "brand": "HYUNDAI",
+    "model": "i40 (2011-2019)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "HYUNDAI",
+    "model": "Tucson (2004-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche sous la colonne de direction",
+    "location_en": "Under dashboard, driver side, left under steering column",
+    "notes": ""
+  },
+
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Jeep Grand Cherokee ZJ (1992-1998)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Jeep Grand Cherokee WJ/WK/WK2 (1999-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près du cache de la boîte à fusibles",
+    "location_en": "Under dashboard, driver side, near fuse panel cover",
+    "notes": "Tirer/retirer le cache de la boîte à fusibles pour exposer la prise"
+  },
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Jeep Wrangler JK (2007-2018)",
+    "location_fr": "Sous le tableau de bord côté conducteur, sur le panneau inférieur entre le volant et la porte",
+    "location_en": "Under dashboard driver side, on lower panel between steering wheel and door",
+    "notes": "Attention à ne pas accrocher la prise avec le pied"
+  },
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Jeep Wrangler JL (2018-)",
+    "location_fr": "Dans la partie inférieure gauche du tableau de bord, côté conducteur",
+    "location_en": "Lower left area of dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Dodge RAM (2009-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche du capot de genoux, près de la commande de capot",
+    "location_en": "Under dashboard, driver side, left of knee bolster, near hood release",
+    "notes": ""
+  },
+  {
+    "brand": "DODGE/JEEP/CHRYSLER",
+    "model": "Chrysler 300C (2003-2010)",
+    "location_fr": "Côté conducteur, à côté de la commande d'ouverture du capot",
+    "location_en": "Driver side, next to hood release lever",
+    "notes": ""
+  },
+
+  {
+    "brand": "CHEVROLET/GM",
+    "model": "Captiva (2006-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "CHEVROLET/GM",
+    "model": "Aveo (2002-2011)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "CHEVROLET/GM",
+    "model": "Cruze (2008-2016)",
+    "location_fr": "Sous le tableau de bord, à gauche de la colonne de direction, prise orientée vers le bas",
+    "location_en": "Under dashboard, left of steering column, port faces downward",
+    "notes": ""
+  },
+  {
+    "brand": "CHEVROLET/GM",
+    "model": "Malibu (2008-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+
+  {
+    "brand": "TESLA",
+    "model": "Model 3 (2017-)",
+    "location_fr": "Dans le cache du pied de caisse côté conducteur (footwell cover)",
+    "location_en": "In driver side footwell cover / door sill cover",
+    "notes": "ATTENTION : Tesla Model 3 n'a PAS de prise OBD2 standard J1962. Le port diagnostique est propriétaire Tesla, accessible via le cache du seuil côté conducteur"
+  },
+  {
+    "brand": "TESLA",
+    "model": "Model Y (2020-)",
+    "location_fr": "Dans le cache du pied de caisse côté conducteur (footwell cover)",
+    "location_en": "In driver side footwell cover / door sill cover",
+    "notes": "Pas de port OBD2 standard. Port diagnostique propriétaire Tesla"
+  },
+  {
+    "brand": "TESLA",
+    "model": "Model S (2012-) [pre-2024]",
+    "location_fr": "Derrière le panneau de service du tableau de bord, sous l'écran tactile (4 clips aux coins)",
+    "location_en": "Behind IP service panel under touchscreen (4 corner tabs to release)",
+    "notes": "Port diagnostique propriétaire Tesla, non OBD2 standard"
+  },
+  {
+    "brand": "TESLA",
+    "model": "Model X (2015-) [pre-2024]",
+    "location_fr": "Derrière le panneau de service du tableau de bord, sous l'écran tactile",
+    "location_en": "Behind IP service panel under touchscreen",
+    "notes": "Post-avril 2024 : port OBD-II J1962 DoIP dans le pied de caisse gauche"
+  },
+
+  {
+    "brand": "VOLVO",
+    "model": "V40 / S40 (2004-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "V50 (2004-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "V60 / S60 (2010-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "V70 / S80 (1998-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "XC60 (2008-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la console centrale, proche de la commande de capot",
+    "location_en": "Under dashboard, driver side, near center console, close to bonnet release lever",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "XC60 II (2017-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "VOLVO",
+    "model": "XC90 (2002-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "SUBARU",
+    "model": "Impreza GD/GG (2000-2007)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, prise encastrée dans la moulure",
+    "location_en": "Under dashboard, driver side, port recessed in molding",
+    "notes": "Anciens modèles : prise encastrée; modèles récents : prise plus accessible"
+  },
+  {
+    "brand": "SUBARU",
+    "model": "Impreza (2007-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction",
+    "location_en": "Under dashboard, driver side, left of steering column",
+    "notes": ""
+  },
+  {
+    "brand": "SUBARU",
+    "model": "Forester (2002-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "SUBARU",
+    "model": "Outback / Legacy (1996-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche de la colonne de direction, accès direct sans démontage",
+    "location_en": "Under dashboard, driver side, left of steering column, direct access without removal",
+    "notes": ""
+  },
+  {
+    "brand": "SUBARU",
+    "model": "XV / Crosstrek (2011-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "MAZDA",
+    "model": "Mazda 2 (2007-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "MAZDA",
+    "model": "Mazda 3 (2004-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": "Accès direct sans démontage"
+  },
+  {
+    "brand": "MAZDA",
+    "model": "Mazda 6 (2002-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MAZDA",
+    "model": "CX-3 (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MAZDA",
+    "model": "CX-5 (2012-)",
+    "location_fr": "Sous le volant, à gauche, près de la commande de capot",
+    "location_en": "Under steering wheel, on the left, near hood release lever",
+    "notes": ""
+  },
+  {
+    "brand": "MAZDA",
+    "model": "MX-5 NC (2006-2015)",
+    "location_fr": "À gauche des pédales, côté conducteur",
+    "location_en": "Left of pedals, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "MITSUBISHI",
+    "model": "Colt (2002-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MITSUBISHI",
+    "model": "Lancer (2003-)",
+    "location_fr": "Sous le bord avant du tableau de bord, côté conducteur",
+    "location_en": "Under the front edge of the dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MITSUBISHI",
+    "model": "Outlander (2005-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MITSUBISHI",
+    "model": "L200 D40/D50 (2005-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, à gauche",
+    "location_en": "Under dashboard, driver side, on the left",
+    "notes": ""
+  },
+  {
+    "brand": "MITSUBISHI",
+    "model": "ASX (2010-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "MITSUBISHI",
+    "model": "Space Star (2012-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "SUZUKI",
+    "model": "Swift (2004-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "SUZUKI",
+    "model": "SX4 I (2006-2014)",
+    "location_fr": "À droite de la commande de capot, derrière un cache plastique, accessible sans démontage",
+    "location_en": "Right of hood release latch, behind plastic panel, accessible without removal",
+    "notes": ""
+  },
+  {
+    "brand": "SUZUKI",
+    "model": "SX4 II / S-Cross (2013-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "SUZUKI",
+    "model": "Vitara (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "SUZUKI",
+    "model": "Jimny (1998-2018)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "SUZUKI",
+    "model": "Splash (2008-2015)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "SAAB",
+    "model": "9-3 I (1998-2002)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, près de la colonne de direction",
+    "location_en": "Under dashboard, driver side, near steering column",
+    "notes": ""
+  },
+  {
+    "brand": "SAAB",
+    "model": "9-3 II (2002-2011)",
+    "location_fr": "Sous le volant, côté console centrale, ou au-dessus de la pédale d'accélérateur",
+    "location_en": "Under steering wheel, center console side, or above accelerator pedal",
+    "notes": "Environ à hauteur du genou droit du conducteur, cache avec petite trappe"
+  },
+  {
+    "brand": "SAAB",
+    "model": "9-5 I (1998-2010)",
+    "location_fr": "Sous le tableau de bord, directement au-dessus du genou droit du conducteur (spec US) ; côté droit sous le volant",
+    "location_en": "Under dashboard, directly above driver's right knee (US spec); right side under steering wheel",
+    "notes": "Petite trappe basculante pour accéder à la prise"
+  },
+  {
+    "brand": "SAAB",
+    "model": "9-5 II (2010-2012)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+
+  {
+    "brand": "JAGUAR",
+    "model": "XF X250 (2007-2015)",
+    "location_fr": "Au-dessus des pédales, côté gauche, côté conducteur",
+    "location_en": "Above pedals, left side, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "JAGUAR",
+    "model": "XE (2015-)",
+    "location_fr": "En bas à droite des pédales, au-dessus de la pédale d'accélérateur",
+    "location_en": "Bottom right of pedal area, above accelerator pedal",
+    "notes": ""
+  },
+  {
+    "brand": "JAGUAR",
+    "model": "XJ (X300/X308/X350)",
+    "location_fr": "À gauche des pédales, en haut à gauche",
+    "location_en": "Left of pedals, top left",
+    "notes": ""
+  },
+  {
+    "brand": "JAGUAR",
+    "model": "F-Pace (2016-)",
+    "location_fr": "Au-dessus des pédales, visible au-dessus de la pédale d'accélérateur",
+    "location_en": "Above pedals, visible above accelerator pedal",
+    "notes": ""
+  },
+  {
+    "brand": "JAGUAR",
+    "model": "E-Pace (2017-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, au-dessus des pédales",
+    "location_en": "Under dashboard, driver side, above pedals",
+    "notes": ""
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Discovery 2 (1998-2004)",
+    "location_fr": "Sous la colonne de direction, côté conducteur",
+    "location_en": "Under steering column, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Discovery 4 (2009-2017)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Discovery Sport (2015-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Discovery 5 (2017-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Defender (1990-2016)",
+    "location_fr": "Sous le tableau de bord, côté conducteur, derrière le cache inférieur maintenu par des clips",
+    "location_en": "Under dashboard, driver side, behind lower dash panel held by clips",
+    "notes": "Retirer le cache inférieur du tableau de bord (maintenu par clips)"
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Range Rover Evoque I (2011-2018)",
+    "location_fr": "Sous le genou, sous le volant, près du pilier de porte (côté conducteur) ; LHD : en bas à gauche des pédales",
+    "location_en": "Under knee pad, under steering wheel, near door pillar (driver side); LHD: lower left near pedals",
+    "notes": "RHD : côté droit de la colonne de direction près du pilier de porte. Petit cache à retirer."
+  },
+  {
+    "brand": "LAND ROVER",
+    "model": "Range Rover Evoque II (2018-)",
+    "location_fr": "Sous le tableau de bord, côté conducteur",
+    "location_en": "Under dashboard, driver side",
+    "notes": ""
+  }
+]

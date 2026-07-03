@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: diagnostic-auto
+    runtime: python
+    buildCommand: echo "no build needed"
+    startCommand: python server.py
+    plan: free

@@ -1,0 +1,444 @@
+#!/usr/bin/env python3
+"""Serveur diagnostic automobile — python3 server.py"""
+
+import json
+import sqlite3
+import os
+import hashlib
+import hmac
+from http.server import HTTPServer, BaseHTTPRequestHandler
+from urllib.parse import urlparse, parse_qs
+
+DB_PATH = os.path.join(os.path.dirname(__file__), "codes.db")
+PORT = int(os.environ.get("PORT", 8080))
+STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
+
+
+OWNER_EMAIL   = "eddy7745@gmail.com"
+MAX_DEVICES   = 2
+
+def init_purchases_db():
+    conn = get_db()
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS purchases (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL,
+            stripe_session_id TEXT,
+            created_at TEXT DEFAULT (datetime('now'))
+        )
+    """)
+    conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS purchases_email ON purchases(email)")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS activations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL,
+            device_id TEXT NOT NULL,
+            activated_at TEXT DEFAULT (datetime('now')),
+            UNIQUE(email, device_id)
+        )
+    """)
+    conn.execute("CREATE INDEX IF NOT EXISTS activations_email ON activations(email)")
+    conn.commit()
+    conn.close()
+
+
+def get_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+class Handler(BaseHTTPRequestHandler):
+    def log_message(self, format, *args):
+        pass  # silence request logs
+
+    def send_json(self, data, status=200):
+        body = json.dumps(data, ensure_ascii=False).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", len(body))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        self.wfile.write(body)
+
+    def send_file(self, path, mime):
+        with open(path, "rb") as f:
+            body = f.read()
+        self.send_response(200)
+        self.send_header("Content-Type", mime)
+        self.send_header("Content-Length", len(body))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+        qs = parse_qs(parsed.query)
+
+        if path == "/" or path == "/index.html":
+            self.send_file(os.path.join(os.path.dirname(__file__), "index.html"), "text/html; charset=utf-8")
+            return
+
+        if path == "/search":
+            code  = qs.get("code",  [""])[0].strip().upper()
+            brand = qs.get("brand", ["ALL"])[0].strip().upper()
+            lang  = qs.get("lang",  ["fr"])[0].strip().lower()
+            limit = min(int(qs.get("limit", [50])[0]), 200)
+
+            if not code:
+                self.send_json({"results": [], "total": 0})
+                return
+
+            # Title column: french / english with fallbacks
+            if lang == "fr":
+                title_col = "CASE WHEN title_fr IS NOT NULL AND title_fr != '' AND title_fr != title THEN title_fr ELSE title END"
+            else:
+                title_col = "CASE WHEN title_en IS NOT NULL AND title_en != '' THEN title_en ELSE title END"
+
+            conn = get_db()
+
+            def brand_clause(b):
+                if b == "ALL":
+                    return ""
+                return f" AND (brand = '{b}' OR brand = 'ALL')"
+
+            bc = brand_clause(brand)
+
+            # Exact match
+            rows = conn.execute(
+                f"SELECT *, {title_col} AS display_title FROM codes WHERE code = ?{bc} ORDER BY brand = 'ALL' ASC LIMIT ?",
+                (code, limit)
+            ).fetchall()
+
+            # Prefix match
+            if not rows:
+                rows = conn.execute(
+                    f"SELECT *, {title_col} AS display_title FROM codes WHERE code LIKE ?{bc} ORDER BY code ASC LIMIT ?",
+                    (code + "%", limit)
+                ).fetchall()
+
+            # Full-text search in title
+            if not rows:
+                rows = conn.execute(
+                    f"SELECT *, {title_col} AS display_title FROM codes WHERE {title_col} LIKE ?{bc} ORDER BY code ASC LIMIT ?",
+                    ("%" + code + "%", limit)
+                ).fetchall()
+
+            conn.close()
+
+            def col(r, name, default=""):
+                return r[name] if name in r.keys() else default
+
+            results = []
+            for r in rows:
+                if lang == "fr":
+                    causes_out = json.loads(col(r, "causes", "[]"))
+                    steps_out  = json.loads(col(r, "steps",  "[]"))
+                else:
+                    causes_raw = col(r, "causes_en", "[]")
+                    steps_raw  = col(r, "steps_en",  "[]")
+                    causes_out = json.loads(causes_raw) if causes_raw else json.loads(col(r, "causes", "[]"))
+                    steps_out  = json.loads(steps_raw)  if steps_raw  else json.loads(col(r, "steps",  "[]"))
+
+                results.append({
+                    "code":     r["code"],
+                    "brand":    r["brand"],
+                    "severity": r["severity"],
+                    "title":    r["display_title"],
+                    "title_fr": col(r, "title_fr"),
+                    "title_en": col(r, "title_en"),
+                    "causes":   causes_out,
+                    "steps":    steps_out,
+                })
+
+            self.send_json({"results": results, "total": len(results)})
+            return
+
+        if path == "/download/apk":
+            apk_path = os.path.join(os.path.dirname(__file__), "DiagnosticAuto.apk")
+            if not os.path.exists(apk_path):
+                self.send_response(404)
+                self.end_headers()
+                return
+            with open(apk_path, "rb") as f:
+                body = f.read()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/vnd.android.package-archive")
+            self.send_header("Content-Disposition", "attachment; filename=DiagnosticAuto.apk")
+            self.send_header("Content-Length", len(body))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if path == "/google32a84dd2657db19d.html":
+            body = b"google-site-verification: google32a84dd2657db19d.html"
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if path == "/robots.txt":
+            body = (
+                "User-agent: *\n"
+                "Allow: /\n"
+                "Disallow: /stats\n\n"
+                "Sitemap: https://diagnostic-auto.onrender.com/sitemap.xml\n"
+            ).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if path == "/sitemap.xml":
+            body = (
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+                '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+                '  <url>\n'
+                '    <loc>https://diagnostic-auto.onrender.com/</loc>\n'
+                '    <changefreq>monthly</changefreq>\n'
+                '    <priority>1.0</priority>\n'
+                '    <xhtml:link rel="alternate" hreflang="fr" href="https://diagnostic-auto.onrender.com/"/>\n'
+                '    <xhtml:link rel="alternate" hreflang="en" href="https://diagnostic-auto.onrender.com/?lang=en"/>\n'
+                '  </url>\n'
+                '  <url>\n'
+                '    <loc>https://diagnostic-auto.onrender.com/privacy</loc>\n'
+                '    <changefreq>yearly</changefreq>\n'
+                '    <priority>0.3</priority>\n'
+                '  </url>\n'
+                + ''.join(
+                    f'  <url>\n'
+                    f'    <loc>https://diagnostic-auto.onrender.com/?code={c}</loc>\n'
+                    f'    <changefreq>yearly</changefreq>\n'
+                    f'    <priority>0.8</priority>\n'
+                    f'  </url>\n'
+                    for c in [
+                        'P0300','P0171','P0420','P0401','P0101','P0130',
+                        'P0505','P0715','P1340','B1000','U0100','P0016',
+                        'P0340','P0442','P0456','P0128','P0335','P0102',
+                        'P0113','P0304','P0302','P0303','P0172','P0301',
+                        'P0191','P0200','P0400','P0410','P0430','P0440',
+                    ]
+                )
+                + '</urlset>\n'
+            ).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/xml; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if path in ("/privacy", "/privacy.html"):
+            self.send_file(os.path.join(os.path.dirname(__file__), "privacy.html"), "text/html; charset=utf-8")
+            return
+
+        if path == "/reset-devices":
+            email     = qs.get("email",     [""])[0].strip().lower()
+            device_id = qs.get("device_id", [""])[0].strip()
+            if not email or not device_id:
+                self.send_json({"ok": False, "reason": "missing_params"})
+                return
+            conn = get_db()
+            # Vérifier que l'email a bien un achat
+            purchase = conn.execute(
+                "SELECT id FROM purchases WHERE email = ?", (email,)
+            ).fetchone()
+            if not purchase:
+                conn.close()
+                self.send_json({"ok": False, "reason": "not_purchased"})
+                return
+            # Supprimer toutes les activations existantes
+            conn.execute("DELETE FROM activations WHERE email = ?", (email,))
+            # Enregistrer le nouvel appareil
+            conn.execute(
+                "INSERT OR IGNORE INTO activations (email, device_id) VALUES (?,?)",
+                (email, device_id)
+            )
+            conn.commit()
+            conn.close()
+            self.send_json({"ok": True})
+            return
+
+        if path == "/obd-location":
+            brand = qs.get("brand", [""])[0].strip().upper()
+            lang  = qs.get("lang",  ["fr"])[0].strip().lower()
+            if not brand:
+                self.send_json({"results": []})
+                return
+            conn = get_db()
+            # Match flexible : CITROEN, CITROËN, CITROEN/DS...
+            rows = conn.execute(
+                "SELECT model, location_fr, location_en, notes FROM obd_locations WHERE UPPER(brand) LIKE ? ORDER BY model",
+                (f"%{brand}%",)
+            ).fetchall()
+            # Si pas de résultat exact, chercher par mot-clé
+            if not rows:
+                rows = conn.execute(
+                    "SELECT model, location_fr, location_en, notes FROM obd_locations WHERE UPPER(brand) LIKE ? ORDER BY model",
+                    (f"%{brand.split('/')[0].strip()}%",)
+                ).fetchall()
+            conn.close()
+            loc_key = "location_fr" if lang == "fr" else "location_en"
+            results = [
+                {
+                    "model": r[0],
+                    "location": r[1] if lang == "fr" else r[2],
+                    "notes": r[3]
+                }
+                for r in rows
+            ]
+            self.send_json({"results": results})
+            return
+
+        if path == "/check-purchase":
+            email     = qs.get("email",     [""])[0].strip().lower()
+            device_id = qs.get("device_id", [""])[0].strip()
+            if not email:
+                self.send_json({"premium": False, "reason": "missing_email"})
+                return
+
+            conn = get_db()
+            # Vérifier que l'email a un achat
+            purchase = conn.execute(
+                "SELECT id FROM purchases WHERE email = ?", (email,)
+            ).fetchone()
+
+            if not purchase:
+                conn.close()
+                self.send_json({"premium": False, "reason": "not_purchased"})
+                return
+
+            # Propriétaire : aucune limite
+            if email == OWNER_EMAIL:
+                if device_id:
+                    conn.execute(
+                        "INSERT OR IGNORE INTO activations (email, device_id) VALUES (?,?)",
+                        (email, device_id)
+                    )
+                    conn.commit()
+                conn.close()
+                self.send_json({"premium": True})
+                return
+
+            # Vérifier si cet appareil est déjà enregistré
+            if device_id:
+                already = conn.execute(
+                    "SELECT id FROM activations WHERE email=? AND device_id=?",
+                    (email, device_id)
+                ).fetchone()
+                if already:
+                    conn.close()
+                    self.send_json({"premium": True})
+                    return
+
+            # Compter les appareils enregistrés
+            count = conn.execute(
+                "SELECT COUNT(*) FROM activations WHERE email=?", (email,)
+            ).fetchone()[0]
+
+            if count >= MAX_DEVICES:
+                conn.close()
+                self.send_json({"premium": False, "reason": "device_limit"})
+                return
+
+            # Enregistrer ce nouvel appareil
+            if device_id:
+                conn.execute(
+                    "INSERT OR IGNORE INTO activations (email, device_id) VALUES (?,?)",
+                    (email, device_id)
+                )
+                conn.commit()
+            conn.close()
+            self.send_json({"premium": True})
+            return
+
+        if path == "/stats":
+            conn = get_db()
+            total = conn.execute("SELECT COUNT(*) FROM codes").fetchone()[0]
+            by_brand = conn.execute(
+                "SELECT brand, COUNT(*) as n FROM codes GROUP BY brand ORDER BY n DESC"
+            ).fetchall()
+            conn.close()
+            self.send_json({
+                "total": total,
+                "by_brand": [{"brand": r["brand"], "count": r["n"]} for r in by_brand]
+            })
+            return
+
+        self.send_response(404)
+        self.end_headers()
+
+    def do_POST(self):
+        parsed = urlparse(self.path)
+        path = parsed.path
+        content_length = int(self.headers.get("Content-Length", 0))
+        raw_body = self.rfile.read(content_length)
+
+        if path == "/webhook/stripe":
+            if STRIPE_WEBHOOK_SECRET:
+                sig_header = self.headers.get("Stripe-Signature", "")
+                if not self._verify_stripe_sig(raw_body, sig_header):
+                    self.send_response(400)
+                    self.end_headers()
+                    return
+
+            try:
+                event = json.loads(raw_body)
+                if event.get("type") == "checkout.session.completed":
+                    session = event["data"]["object"]
+                    details = session.get("customer_details") or {}
+                    email = details.get("email", "").strip().lower()
+                    session_id = session.get("id", "")
+                    if email:
+                        conn = get_db()
+                        conn.execute(
+                            "INSERT OR IGNORE INTO purchases (email, stripe_session_id) VALUES (?, ?)",
+                            (email, session_id)
+                        )
+                        conn.commit()
+                        conn.close()
+            except Exception:
+                pass
+
+            self.send_json({"received": True})
+            return
+
+        self.send_response(404)
+        self.end_headers()
+
+    def _verify_stripe_sig(self, raw_body, sig_header):
+        try:
+            parts = dict(item.split("=", 1) for item in sig_header.split(","))
+            timestamp = parts.get("t", "")
+            v1 = parts.get("v1", "")
+            signed = f"{timestamp}.{raw_body.decode('utf-8')}"
+            expected = hmac.new(
+                STRIPE_WEBHOOK_SECRET.encode(),
+                signed.encode(),
+                hashlib.sha256
+            ).hexdigest()
+            return hmac.compare_digest(expected, v1)
+        except Exception:
+            return False
+
+
+if __name__ == "__main__":
+    print(f"Diagnostic Auto — port {PORT}")
+    init_purchases_db()
+    # Propriétaire de l'application — accès premium permanent
+    try:
+        conn = get_db()
+        conn.execute(
+            "INSERT OR IGNORE INTO purchases (email, stripe_session_id) VALUES (?, ?)",
+            ("eddy7745@gmail.com", "owner")
+        )
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass
+    HTTPServer(("0.0.0.0", PORT), Handler).serve_forever()

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic Auto — Code Défaut OBD-II | 16 990 codes gratuits</title>
+<meta name="description" content="Recherchez gratuitement parmi 16 990 codes défauts OBD-II et constructeurs : Renault, Peugeot, BMW, Volkswagen, Toyota… Signification, causes et étapes de diagnostic instantanés.">
+<meta name="keywords" content="code défaut OBD, code erreur voiture, OBD2, diagnostic automobile, code P0300, code P0171, code moteur, voyant moteur, lecture code défaut, réinitialiser code défaut, Renault, Peugeot, BMW, Mercedes, Volkswagen, Toyota, Honda, Ford">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Diagnostic Auto">
+<link rel="canonical" href="https://diagnostic-auto.onrender.com/">
+<link rel="alternate" hreflang="fr" href="https://diagnostic-auto.onrender.com/">
+<link rel="alternate" hreflang="en" href="https://diagnostic-auto.onrender.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://diagnostic-auto.onrender.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://diagnostic-auto.onrender.com/">
+<meta property="og:title" content="Diagnostic Auto — 16 990 codes défauts OBD-II gratuits">
+<meta property="og:description" content="Recherchez instantanément la signification de votre code erreur voiture. Base de 16 990 codes OBD-II couvrant toutes les marques automobiles.">
+<meta property="og:image" content="https://diagnostic-auto.onrender.com/og-image.png">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Diagnostic Auto">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diagnostic Auto — 16 990 codes défauts OBD-II gratuits">
+<meta name="twitter:description" content="Recherchez instantanément la signification de votre code erreur voiture. Base de 16 990 codes OBD-II couvrant toutes les marques.">
+<meta name="twitter:image" content="https://diagnostic-auto.onrender.com/og-image.png">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Diagnostic Auto",
+      "url": "https://diagnostic-auto.onrender.com",
+      "description": "Base de données gratuite de 16 990 codes défauts OBD-II et constructeurs automobiles",
+      "inLanguage": ["fr", "en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://diagnostic-auto.onrender.com/?code={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Diagnostic Auto",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "Application Android de diagnostic automobile avec 16 990 codes OBD-II. Fonctionne hors-ligne, gratuit.",
+      "downloadUrl": "https://diagnostic-auto.onrender.com/download/apk"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'un code défaut OBD-II ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un code défaut OBD-II est un code alphanumérique généré par l'ordinateur de bord quand il détecte une anomalie. Il commence par une lettre (P pour moteur, B pour carrosserie, C pour châssis, U pour réseau) suivie de 4 chiffres."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que signifie le code P0300 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le code P0300 indique des ratés d'allumage aléatoires sur plusieurs cylindres. Causes possibles : bougies usées, bobine d'allumage défectueuse, injecteur défaillant ou fuite de compression."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de codes défauts sont disponibles ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diagnostic Auto contient 16 990 codes défauts OBD-II et constructeurs, couvrant toutes les grandes marques : Renault, Peugeot, Citroën, Volkswagen, BMW, Mercedes, Toyota, Honda, Ford et plus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment effacer un code défaut sans valise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour effacer un code défaut, vous avez besoin d'une valise de diagnostic ou d'un lecteur OBD-II connecté à la prise OBD sous le tableau de bord. L'application Diagnostic Auto vous donne la signification du code et les étapes pour résoudre la panne avant de l'effacer."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+    --accent: #3b82f6; --accent2: #60a5fa;
+    --green: #22c55e; --orange: #f97316; --red: #ef4444;
+    --text: #e2e8f0; --muted: #94a3b8; --border: #2d3452;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1e3a8a, #1e1b4b); padding: 20px; border-bottom: 1px solid var(--border); }
+  .header-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+  header h1 { font-size: 1.6rem; font-weight: 700; }
+  header p { color: var(--muted); margin-top: 4px; font-size: 0.9rem; max-width: 900px; margin: 6px auto 0; }
+  .badge { display: inline-block; background: var(--accent); color: #fff; border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; font-weight: 600; margin-left: 8px; }
+  .lang-toggle { display: flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .lang-btn { padding: 6px 14px; font-size: 0.85rem; font-weight: 700; cursor: pointer; background: var(--surface2); color: var(--muted); border: none; transition: all .15s; }
+  .lang-btn.active { background: var(--accent); color: #fff; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+  .search-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 24px; }
+  .search-box h2 { font-size: 1.05rem; margin-bottom: 16px; color: var(--accent2); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  select, input[type="text"] {
+    background: var(--surface2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 14px; font-size: 0.95rem; outline: none;
+    transition: border-color .2s;
+  }
+  select:focus, input:focus { border-color: var(--accent2); }
+  select { cursor: pointer; flex: 1; min-width: 180px; }
+  input[type="text"] { flex: 1; min-width: 160px; font-family: monospace; }
+  button.search-btn {
+    background: linear-gradient(135deg, var(--accent), #1d4ed8);
+    color: #fff; border: none; border-radius: 8px; padding: 10px 22px;
+    font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: opacity .2s;
+  }
+  button.search-btn:hover { opacity: 0.85; }
+  .popular { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chip {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 20px;
+    padding: 4px 12px; font-size: 0.8rem; cursor: pointer; transition: all .15s;
+  }
+  .chip:hover { border-color: var(--accent2); color: var(--accent2); }
+  #results { display: flex; flex-direction: column; gap: 16px; }
+  #status { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; min-height: 22px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .code-badge { font-family: monospace; font-size: 1.3rem; font-weight: 700; color: var(--accent2); }
+  .brand-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 10px; font-size: 0.8rem; color: var(--muted); }
+  .sev { border-radius: 6px; padding: 3px 10px; font-size: 0.8rem; font-weight: 600; }
+  .sev.high { background: #7f1d1d; color: var(--red); }
+  .sev.medium { background: #431407; color: var(--orange); }
+  .sev.low { background: #14532d; color: var(--green); }
+  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 14px; line-height: 1.4; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; margin-top: 12px; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0 5px 16px; position: relative; font-size: 0.92rem; line-height: 1.4; border-bottom: 1px solid var(--border); }
+  ul li:last-child { border-bottom: none; }
+  ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent2); font-weight: 700; }
+  .spinner { display: none; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 20px auto; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .stats-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; font-size: 0.85rem; color: var(--muted); }
+  .stats-bar strong { color: var(--accent2); }
+
+  /* ── App download banner ── */
+  .app-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 20px;
+  }
+  .app-banner-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .app-banner-left { display: flex; align-items: center; gap: 14px; }
+  .app-icon { font-size: 2.4rem; line-height: 1; }
+  .app-info-title { font-weight: 700; font-size: 1rem; color: #fff; }
+  .app-info-sub { font-size: 0.82rem; color: #93c5fd; margin-top: 2px; }
+  .app-stars { color: #fbbf24; font-size: 0.78rem; letter-spacing: 1px; }
+  .app-btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+  .app-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; color: #1e1b4b;
+    border-radius: 10px; padding: 9px 18px;
+    font-weight: 700; font-size: 0.88rem;
+    text-decoration: none; transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .app-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+  .app-btn .btn-icon { font-size: 1.2rem; }
+  .app-btn .btn-label { display: flex; flex-direction: column; line-height: 1.2; }
+  .app-btn .btn-small { font-size: 0.68rem; font-weight: 400; color: #4338ca; }
+  .app-btn.android { background: #22c55e; color: #fff; }
+  .app-btn.android .btn-small { color: #bbf7d0; }
+
+  .app-tagline {
+    max-width: 900px; margin: 0 auto;
+    padding: 8px 20px 0;
+    font-size: 0.8rem; color: #93c5fd;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .qr-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .qr-img { border-radius: 8px; background: #fff; padding: 8px; flex-shrink: 0; width: 116px; height: 116px; display: block; }
+  .qr-text-title { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 4px; }
+  .qr-text-sub { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .qr-arrow { font-size: 1.8rem; color: var(--accent2); }
+
+  /* ── App exclusive promo ── */
+  .app-exclusive {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    border: 1px solid #4338ca; border-radius: var(--radius);
+    padding: 28px 24px; margin-bottom: 24px; text-align: center;
+  }
+  .app-exclusive-icon { font-size: 3rem; margin-bottom: 10px; }
+  .app-exclusive h2 { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .app-exclusive p { color: #a5b4fc; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .app-exclusive-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 22px; }
+  .app-exclusive-feat { background: rgba(99,102,241,0.2); border: 1px solid #4338ca; border-radius: 20px; padding: 5px 14px; font-size: 0.82rem; color: #c7d2fe; }
+  .app-exclusive-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #22c55e; color: #fff; border-radius: 10px;
+    padding: 12px 28px; font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 2px 12px rgba(34,197,94,0.4);
+  }
+  .app-exclusive-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 18px rgba(34,197,94,0.5); }
+
+  /* ── SEO Footer ── */
+  .seo-footer {
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 40px 20px 28px; margin-top: 40px; font-size: 0.85rem; color: var(--muted);
+  }
+  .seo-footer-inner { max-width: 900px; margin: 0 auto; }
+  .seo-footer h2 { font-size: 1rem; color: var(--text); margin-bottom: 10px; }
+  .seo-footer h3 { font-size: 0.88rem; color: var(--accent2); margin: 20px 0 8px; }
+  .seo-footer p { line-height: 1.7; margin-bottom: 8px; }
+  .seo-brands { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 16px; }
+  .seo-brand-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 3px 10px; font-size: 0.78rem; color: var(--muted); cursor: pointer; transition: all .15s; }
+  .seo-brand-tag:hover { border-color: var(--accent2); color: var(--accent2); }
+  .seo-codes { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .seo-code-link { color: var(--accent2); cursor: pointer; text-decoration: none; font-family: monospace; font-size: 0.82rem; }
+  .seo-code-link:hover { text-decoration: underline; }
+  .seo-footer-bottom { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 0.78rem; }
+  .seo-footer-bottom a { color: var(--muted); text-decoration: none; }
+  .seo-footer-bottom a:hover { color: var(--accent2); }
+  .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <h1>🔧 Diagnostic Auto <span class="badge" id="total-badge">…</span></h1>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+  <p id="header-sub">Recherchez n'importe quel code défaut OBD-II ou constructeur</p>
+</header>
+
+<!-- App download banner -->
+<div class="app-banner" id="app-banner">
+  <div class="app-banner-inner">
+    <div class="app-banner-left">
+      <div class="app-icon">📱</div>
+      <div>
+        <div class="app-info-title" id="banner-title">Diagnostic Auto — Application mobile</div>
+        <div class="app-stars">★★★★★</div>
+        <div class="app-info-sub" id="banner-sub">16 990 codes • Fonctionne hors-ligne • Gratuit</div>
+      </div>
+    </div>
+    <div class="app-btn-group">
+      <a class="app-btn android" href="/download/apk" download="DiagnosticAuto.apk">
+        <span class="btn-icon">🤖</span>
+        <span class="btn-label">
+          <span class="btn-small" id="btn-android-small">Télécharger</span>
+          <span>Android APK</span>
+        </span>
+      </a>
+      <a class="app-btn" href="https://buy.stripe.com/7sY8wI8Ho0b36S8agRgrS00" target="_blank">
+        <span class="btn-icon">⭐</span>
+        <span class="btn-label">
+          <span class="btn-small" id="btn-premium-small">Accès complet</span>
+          <span id="btn-premium-label">Premium 3,99 €</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="app-tagline" id="app-tagline">
+  ✅ <span id="tagline-text">Site web 100% gratuit — emportez l'app dans votre garage</span>
+</div>
+</div>
+
+<div class="container">
+  <div class="qr-section" id="qr-section">
+    <img class="qr-img" id="qr-img" src="" alt="QR Code">
+    <div class="qr-arrow">→</div>
+    <div>
+      <div class="qr-text-title" id="qr-title">📲 Téléchargez l'application</div>
+      <div class="qr-text-sub" id="qr-sub">Scannez ce QR code avec votre téléphone<br>pour télécharger l'APK Android directement.</div>
+    </div>
+  </div>
+
+  <div class="stats-bar" id="stats-bar">Chargement…</div>
+
+  <div class="search-box">
+    <h2 id="search-title">Entrez un code défaut</h2>
+    <div class="row">
+      <select id="brand"></select>
+      <input type="text" id="code-input" placeholder="Ex: P0300, P03, B1…" maxlength="12"
+             onkeydown="if(event.key==='Enter') search()">
+      <button class="search-btn" onclick="search()" id="search-btn">Rechercher</button>
+    </div>
+    <div class="popular" id="popular-row">
+      <span style="font-size:0.8rem;color:var(--muted)" id="popular-label">Populaires :</span>
+    </div>
+  </div>
+
+  <div class="spinner" id="spinner"></div>
+  <div id="status"></div>
+  <div id="results"></div>
+
+  <!-- App exclusive promo -->
+  <div class="app-exclusive" id="app-exclusive" style="margin-top:24px;">
+    <div class="app-exclusive-icon">🔬</div>
+    <h2 id="excl-title">Analyse multi-codes — exclusif application</h2>
+    <p id="excl-desc">Entrez tous vos codes défauts d'un coup et obtenez un verdict instantané : est-ce dangereux ? Par quoi commencer ? L'app analyse, priorise et vous conseille.</p>
+    <div class="app-exclusive-features">
+      <span class="app-exclusive-feat" id="excl-f1">🔴 Verdict immédiat</span>
+      <span class="app-exclusive-feat" id="excl-f2">⚡ Ordre de priorité</span>
+      <span class="app-exclusive-feat" id="excl-f3">📴 100% hors-ligne</span>
+      <span class="app-exclusive-feat" id="excl-f4">⭐ Premium</span>
+    </div>
+    <a class="app-exclusive-btn" href="/download/apk" download="DiagnosticAuto.apk">
+      <span>🤖</span> <span id="excl-btn">Télécharger l'application Android</span>
+    </a>
+  </div>
+</div>
+
+<script>
+// ── i18n ──────────────────────────────────────────────────────────────────
+const T = {
+  fr: {
+    bannerTitle:       'Diagnostic Auto — Application mobile',
+    bannerSub:         '16 990 codes • Fonctionne hors-ligne • Gratuit',
+    bannerAndroid:     'Télécharger',
+    bannerPremiumSmall:'Accès complet',
+    bannerPremium:     'Premium 3,99 €',
+    tagline:           'Site web 100% gratuit — emportez l\'app dans votre garage',
+    qrTitle:           '📲 Téléchargez l\'application',
+    qrSub:             'Scannez ce QR code avec votre téléphone<br>pour télécharger l\'APK Android directement.',
+    headerSub:    'Recherchez n\'importe quel code défaut OBD-II ou constructeur',
+    searchTitle:  'Entrez un code défaut',
+    searchBtn:    'Rechercher',
+    popularLabel: 'Populaires :',
+    allBrands:    'Toutes marques (OBD universel)',
+    europe:       '── Europe ──',
+    america:      '── Amérique ──',
+    asia:         '── Asie ──',
+    loading:      'Chargement…',
+    serverError:  'Serveur non disponible',
+    noResult:     c => `Aucun résultat pour "${c}"`,
+    found:        n => `${n} résultat(s) trouvé(s)`,
+    causes:       'Causes possibles',
+    steps:        'Étapes de diagnostic',
+    sev:          { high: 'Critique', medium: 'Modéré', low: 'Mineur' },
+    codes:        n => `${n.toLocaleString('fr')} codes`,
+    statsBase:    n => `Base : <strong>${n.toLocaleString('fr')} codes défauts</strong>`,
+    langParam:    'fr',
+    exclTitle: 'Analyse multi-codes — exclusif application',
+    exclDesc:  'Entrez tous vos codes défauts d\'un coup et obtenez un verdict instantané : est-ce dangereux ? Par quoi commencer ? L\'app analyse, priorise et vous conseille.',
+    exclF1: '🔴 Verdict immédiat', exclF2: '⚡ Ordre de priorité', exclF3: '📴 100% hors-ligne', exclF4: '⭐ Premium',
+    exclBtn: 'Télécharger l\'application Android',
+  },
+  en: {
+    bannerTitle:       'Diagnostic Auto — Mobile App',
+    bannerSub:         '16,990 codes • Works offline • Free',
+    bannerAndroid:     'Download',
+    bannerPremiumSmall:'Full access',
+    bannerPremium:     'Premium €3.99',
+    tagline:           '100% free website — take the app to your garage',
+    qrTitle:           '📲 Download the app',
+    qrSub:             'Scan this QR code with your phone<br>to download the Android APK directly.',
+    headerSub:    'Search any OBD-II or manufacturer fault code',
+    searchTitle:  'Enter a fault code',
+    searchBtn:    'Search',
+    popularLabel: 'Popular:',
+    allBrands:    'All brands (Universal OBD)',
+    europe:       '── Europe ──',
+    america:      '── America ──',
+    asia:         '── Asia ──',
+    loading:      'Loading…',
+    serverError:  'Server unavailable',
+    noResult:     c => `No results for "${c}"`,
+    found:        n => `${n} result(s) found`,
+    causes:       'Possible causes',
+    steps:        'Diagnostic steps',
+    sev:          { high: 'Critical', medium: 'Moderate', low: 'Minor' },
+    codes:        n => `${n.toLocaleString('en')} codes`,
+    statsBase:    n => `Database: <strong>${n.toLocaleString('en')} fault codes</strong>`,
+    langParam:    'en',
+    exclTitle: 'Multi-code analysis — app exclusive',
+    exclDesc:  'Enter all your fault codes at once and get an instant verdict: is it dangerous? What to fix first? The app analyses, prioritises and advises you.',
+    exclF1: '🔴 Instant verdict', exclF2: '⚡ Priority order', exclF3: '📴 100% offline', exclF4: '⭐ Premium',
+    exclBtn: 'Download the Android app',
+  },
+};
+
+const BRANDS = [
+  { group: null,      value: 'ALL' },
+  { group: 'europe',  value: 'RENAULT',    fr: 'Renault / Dacia',                      en: 'Renault / Dacia' },
+  { group: 'europe',  value: 'PEUGEOT',    fr: 'Peugeot / Citroën / DS',               en: 'Peugeot / Citroën / DS' },
+  { group: 'europe',  value: 'VOLKSWAGEN', fr: 'Volkswagen / Seat / Skoda / Porsche',  en: 'Volkswagen / Seat / Skoda / Porsche' },
+  { group: 'europe',  value: 'AUDI',       fr: 'Audi',                                 en: 'Audi' },
+  { group: 'europe',  value: 'BMW',        fr: 'BMW / Mini',                           en: 'BMW / Mini' },
+  { group: 'europe',  value: 'MERCEDES',   fr: 'Mercedes-Benz / Smart',                en: 'Mercedes-Benz / Smart' },
+  { group: 'europe',  value: 'OPEL',       fr: 'Opel / Vauxhall',                      en: 'Opel / Vauxhall' },
+  { group: 'europe',  value: 'FIAT',       fr: 'Fiat / Alfa Romeo / Lancia',           en: 'Fiat / Alfa Romeo / Lancia' },
+  { group: 'europe',  value: 'VOLVO',      fr: 'Volvo',                                en: 'Volvo' },
+  { group: 'europe',  value: 'JAGUAR',     fr: 'Jaguar / Land Rover',                  en: 'Jaguar / Land Rover' },
+  { group: 'europe',  value: 'SAAB',       fr: 'Saab',                                 en: 'Saab' },
+  { group: 'europe',  value: 'FERRARI',    fr: 'Ferrari / Lamborghini / Maserati',     en: 'Ferrari / Lamborghini / Maserati' },
+  { group: 'europe',  value: 'BENTLEY',    fr: 'Bentley / Rolls-Royce / Aston Martin', en: 'Bentley / Rolls-Royce / Aston Martin' },
+  { group: 'europe',  value: 'MAZDA',      fr: 'Mazda',                                en: 'Mazda' },
+  { group: 'europe',  value: 'MITSUBISHI', fr: 'Mitsubishi',                           en: 'Mitsubishi' },
+  { group: 'europe',  value: 'SUBARU',     fr: 'Subaru',                               en: 'Subaru' },
+  { group: 'europe',  value: 'SUZUKI',     fr: 'Suzuki',                               en: 'Suzuki' },
+  { group: 'america', value: 'FORD',       fr: 'Ford / Lincoln / Mercury',             en: 'Ford / Lincoln / Mercury' },
+  { group: 'america', value: 'CHEVROLET',  fr: 'Chevrolet / GMC / Buick / Cadillac',  en: 'Chevrolet / GMC / Buick / Cadillac' },
+  { group: 'america', value: 'DODGE',      fr: 'Dodge / Chrysler / Jeep / RAM',        en: 'Dodge / Chrysler / Jeep / RAM' },
+  { group: 'america', value: 'TESLA',      fr: 'Tesla',                                en: 'Tesla' },
+  { group: 'asia',    value: 'TOYOTA',     fr: 'Toyota / Lexus',                       en: 'Toyota / Lexus' },
+  { group: 'asia',    value: 'HONDA',      fr: 'Honda / Acura',                        en: 'Honda / Acura' },
+  { group: 'asia',    value: 'NISSAN',     fr: 'Nissan / Infiniti',                    en: 'Nissan / Infiniti' },
+  { group: 'asia',    value: 'KIA',        fr: 'Kia / Hyundai',                        en: 'Kia / Hyundai' },
+];
+
+const POPULAR = ['P0300','P0171','P0420','P0401','P0101','P0130','P0505','P0715','P1340','B1000','U0100'];
+
+let lang = localStorage.getItem('lang') || 'fr';
+let lastStats = null;
+
+function t() { return T[lang]; }
+
+function setLang(l) {
+  lang = l;
+  localStorage.setItem('lang', l);
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  applyLang();
+  if (lastStats) renderStats(lastStats);
+  // Re-search if there's a current query
+  const code = document.getElementById('code-input').value.trim();
+  if (code) search();
+}
+
+function applyLang() {
+  const tr = t();
+  document.getElementById('header-sub').textContent        = tr.headerSub;
+  document.getElementById('search-title').textContent      = tr.searchTitle;
+  document.getElementById('search-btn').textContent        = tr.searchBtn;
+  document.getElementById('popular-label').textContent     = tr.popularLabel;
+  document.getElementById('banner-title').textContent      = tr.bannerTitle;
+  document.getElementById('banner-sub').textContent        = tr.bannerSub;
+  document.getElementById('btn-android-small').textContent = tr.bannerAndroid;
+  document.getElementById('btn-premium-small').textContent = tr.bannerPremiumSmall;
+  document.getElementById('btn-premium-label').textContent = tr.bannerPremium;
+  document.getElementById('tagline-text').textContent = tr.tagline;
+  document.getElementById('qr-title').textContent     = tr.qrTitle;
+  document.getElementById('qr-sub').innerHTML         = tr.qrSub;
+  document.getElementById('excl-title').textContent = tr.exclTitle;
+  document.getElementById('excl-desc').textContent  = tr.exclDesc;
+  document.getElementById('excl-f1').textContent    = tr.exclF1;
+  document.getElementById('excl-f2').textContent    = tr.exclF2;
+  document.getElementById('excl-f3').textContent    = tr.exclF3;
+  document.getElementById('excl-f4').textContent    = tr.exclF4;
+  document.getElementById('excl-btn').textContent   = tr.exclBtn;
+  buildBrandSelect();
+}
+
+function buildBrandSelect() {
+  const tr = t();
+  const sel = document.getElementById('brand');
+  const current = sel.value;
+  sel.innerHTML = '';
+
+  // All brands option
+  const all = document.createElement('option');
+  all.value = 'ALL'; all.textContent = tr.allBrands;
+  sel.appendChild(all);
+
+  const groups = { europe: tr.europe, america: tr.america, asia: tr.asia };
+  let currentGroup = null;
+  let grpEl = null;
+  BRANDS.filter(b => b.group).forEach(b => {
+    if (b.group !== currentGroup) {
+      grpEl = document.createElement('optgroup');
+      grpEl.label = groups[b.group];
+      sel.appendChild(grpEl);
+      currentGroup = b.group;
+    }
+    const opt = document.createElement('option');
+    opt.value = b.value;
+    opt.textContent = b[lang];
+    grpEl.appendChild(opt);
+  });
+
+  sel.value = current || 'ALL';
+}
+
+function buildPopular() {
+  const row = document.getElementById('popular-row');
+  // Remove old chips
+  row.querySelectorAll('.chip').forEach(c => c.remove());
+  POPULAR.forEach(p => {
+    const chip = document.createElement('span');
+    chip.className = 'chip';
+    chip.textContent = p;
+    chip.onclick = () => quickSearch(p);
+    row.appendChild(chip);
+  });
+}
+
+function renderStats(d) {
+  lastStats = d;
+  const tr = t();
+  document.getElementById('total-badge').textContent = tr.codes(d.total);
+  const top = d.by_brand.slice(0, 6).map(b => `<strong>${b.brand}</strong> ${b.count.toLocaleString()}`).join(' · ');
+  document.getElementById('stats-bar').innerHTML = tr.statsBase(d.total) + ' &nbsp;|&nbsp; ' + top + ' …';
+}
+
+async function loadStats() {
+  try {
+    const r = await fetch('/stats');
+    const d = await r.json();
+    renderStats(d);
+  } catch(e) {
+    document.getElementById('stats-bar').textContent = t().serverError;
+  }
+}
+
+function quickSearch(code) {
+  document.getElementById('code-input').value = code;
+  search();
+}
+
+async function search() {
+  const code = document.getElementById('code-input').value.trim().toUpperCase();
+  const brand = document.getElementById('brand').value;
+  if (!code) return;
+
+  document.getElementById('spinner').style.display = 'block';
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('status').textContent = '';
+
+  try {
+    const url = `/search?code=${encodeURIComponent(code)}&brand=${encodeURIComponent(brand)}&limit=50&lang=${lang}`;
+    const r = await fetch(url);
+    const d = await r.json();
+
+    document.getElementById('spinner').style.display = 'none';
+
+    if (!d.results || d.results.length === 0) {
+      document.getElementById('status').textContent = t().noResult(code);
+      return;
+    }
+
+    document.getElementById('status').textContent = t().found(d.results.length);
+    document.getElementById('results').innerHTML = d.results.map(renderCard).join('');
+  } catch(e) {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('status').textContent = t().serverError;
+  }
+}
+
+function renderCard(e) {
+  const tr = t();
+  const sevLabel = tr.sev[e.severity] || e.severity;
+  const title = e.title;
+  const causes = e.causes.map(c => `<li>${c}</li>`).join('');
+  const steps  = e.steps.map(s => `<li>${s}</li>`).join('');
+  return `
+  <div class="card">
+    <div class="card-header">
+      <span class="code-badge">${e.code}</span>
+      <span class="brand-tag">${e.brand}</span>
+      <span class="sev ${e.severity}">${sevLabel}</span>
+    </div>
+    <h3>${title}</h3>
+    <div class="section-label">${tr.causes}</div>
+    <ul>${causes}</ul>
+    <div class="section-label">${tr.steps}</div>
+    <ul>${steps}</ul>
+  </div>`;
+}
+
+// ── QR Code (pure JS, no lib) ─────────────────────────────────────────────
+// Uses the Google Charts API to render a QR code as an image on the canvas
+const APK_URL = 'https://expo.dev/accounts/diagauto/projects/diagnostic-auto/builds';
+
+function buildQR() {
+  const img = document.getElementById('qr-img');
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(APK_URL)}&bgcolor=ffffff&color=000000&margin=0`;
+}
+
+// ── Dynamic title & meta description on search ───────────────────────────
+function updateMeta(code, results) {
+  if (code && results && results.length > 0) {
+    const first = results[0];
+    document.title = `Code ${code} — ${first.title} | Diagnostic Auto`;
+    document.querySelector('meta[name="description"]').setAttribute('content',
+      `Code défaut ${code} : ${first.title}. ${first.causes[0] || ''} — Diagnostic Auto`);
+  } else {
+    document.title = 'Diagnostic Auto — Code Défaut OBD-II | 16 990 codes gratuits';
+    document.querySelector('meta[name="description"]').setAttribute('content',
+      'Recherchez gratuitement parmi 16 990 codes défauts OBD-II et constructeurs : Renault, Peugeot, BMW, Volkswagen, Toyota… Signification, causes et étapes de diagnostic instantanés.');
+  }
+}
+
+// Patch search() to update meta
+const _origSearch = search;
+window.search = async function() {
+  const code = document.getElementById('code-input').value.trim().toUpperCase();
+  const brand = document.getElementById('brand').value;
+  if (!code) return;
+  document.getElementById('spinner').style.display = 'block';
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('status').textContent = '';
+  try {
+    const url = `/search?code=${encodeURIComponent(code)}&brand=${encodeURIComponent(brand)}&limit=50&lang=${lang}`;
+    const r = await fetch(url);
+    const d = await r.json();
+    document.getElementById('spinner').style.display = 'none';
+    if (!d.results || d.results.length === 0) {
+      document.getElementById('status').textContent = t().noResult(code);
+      updateMeta(null, null);
+      return;
+    }
+    document.getElementById('status').textContent = t().found(d.results.length);
+    document.getElementById('results').innerHTML = d.results.map(renderCard).join('');
+    updateMeta(code, d.results);
+  } catch(e) {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('status').textContent = t().serverError;
+  }
+};
+
+// Handle ?code= in URL on page load
+(function() {
+  const params = new URLSearchParams(location.search);
+  const c = params.get('code');
+  const l = params.get('lang');
+  if (l && (l === 'fr' || l === 'en')) { lang = l; }
+  if (c) {
+    document.getElementById('code-input').value = c;
+    setTimeout(() => window.search(), 500);
+  }
+})();
+
+// Init
+applyLang();
+buildPopular();
+loadStats();
+buildQR();
+</script>
+
+<footer class="seo-footer" itemscope itemtype="https://schema.org/WPFooter">
+  <div class="seo-footer-inner">
+    <div class="seo-grid">
+      <div>
+        <h2>À propos de Diagnostic Auto</h2>
+        <p>Diagnostic Auto est un outil gratuit de recherche de codes défauts OBD-II et constructeurs automobiles. Notre base de données contient <strong>16 990 codes</strong> couvrant toutes les grandes marques mondiales, avec les causes probables et les étapes de diagnostic en français et en anglais.</p>
+        <p>Accessible sur ordinateur, téléphone ou tablette — aucune inscription requise.</p>
+      </div>
+      <div>
+        <h2>Application Android</h2>
+        <p>Téléchargez l'application <strong>Diagnostic Auto</strong> pour Android et consultez tous les codes défauts <strong>hors-ligne</strong>, directement dans votre garage, sans connexion internet.</p>
+        <p>Fonctionnalité exclusive : analyse multi-codes avec verdict de priorité et conseils de réparation.</p>
+        <a href="/download/apk" download="DiagnosticAuto.apk" style="color:var(--accent2);text-decoration:none;">⬇ Télécharger l'APK Android gratuitement</a>
+      </div>
+    </div>
+
+    <h3>Marques automobiles couvertes</h3>
+    <div class="seo-brands" id="seo-brands-list">
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Renault / Dacia</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0420')">Peugeot / Citroën</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0171')">Volkswagen / Audi / Seat / Skoda</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">BMW / Mini</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Mercedes-Benz / Smart</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Toyota / Lexus</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Honda / Acura</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Ford / Lincoln</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Chevrolet / GMC / Cadillac</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Fiat / Alfa Romeo</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Volvo</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Jaguar / Land Rover</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Nissan / Infiniti</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Kia / Hyundai</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Opel / Vauxhall</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Subaru</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Mitsubishi</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Suzuki</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Mazda</span>
+      <span class="seo-brand-tag" onclick="quickSearch('P0300')">Tesla</span>
+    </div>
+
+    <h3>Codes défauts les plus recherchés</h3>
+    <div class="seo-codes">
+      <a class="seo-code-link" onclick="quickSearch('P0300')" href="?code=P0300">P0300</a>
+      <a class="seo-code-link" onclick="quickSearch('P0171')" href="?code=P0171">P0171</a>
+      <a class="seo-code-link" onclick="quickSearch('P0420')" href="?code=P0420">P0420</a>
+      <a class="seo-code-link" onclick="quickSearch('P0401')" href="?code=P0401">P0401</a>
+      <a class="seo-code-link" onclick="quickSearch('P0101')" href="?code=P0101">P0101</a>
+      <a class="seo-code-link" onclick="quickSearch('P0130')" href="?code=P0130">P0130</a>
+      <a class="seo-code-link" onclick="quickSearch('P0505')" href="?code=P0505">P0505</a>
+      <a class="seo-code-link" onclick="quickSearch('P0715')" href="?code=P0715">P0715</a>
+      <a class="seo-code-link" onclick="quickSearch('P1340')" href="?code=P1340">P1340</a>
+      <a class="seo-code-link" onclick="quickSearch('B1000')" href="?code=B1000">B1000</a>
+      <a class="seo-code-link" onclick="quickSearch('U0100')" href="?code=U0100">U0100</a>
+      <a class="seo-code-link" onclick="quickSearch('P0016')" href="?code=P0016">P0016</a>
+      <a class="seo-code-link" onclick="quickSearch('P0340')" href="?code=P0340">P0340</a>
+      <a class="seo-code-link" onclick="quickSearch('P0442')" href="?code=P0442">P0442</a>
+      <a class="seo-code-link" onclick="quickSearch('P0456')" href="?code=P0456">P0456</a>
+      <a class="seo-code-link" onclick="quickSearch('P0128')" href="?code=P0128">P0128</a>
+      <a class="seo-code-link" onclick="quickSearch('P0335')" href="?code=P0335">P0335</a>
+      <a class="seo-code-link" onclick="quickSearch('P0102')" href="?code=P0102">P0102</a>
+      <a class="seo-code-link" onclick="quickSearch('P0113')" href="?code=P0113">P0113</a>
+      <a class="seo-code-link" onclick="quickSearch('P0304')" href="?code=P0304">P0304</a>
+    </div>
+
+    <h3>Questions fréquentes</h3>
+    <div class="seo-grid" style="margin-top:8px;">
+      <div>
+        <p><strong>Qu'est-ce qu'un code défaut OBD-II ?</strong><br>
+        Un code OBD-II est généré par l'ordinateur de bord lorsqu'il détecte une anomalie. Il commence par P (moteur), B (carrosserie), C (châssis) ou U (réseau) suivi de 4 chiffres.</p>
+      </div>
+      <div>
+        <p><strong>Comment lire un code défaut sans valise ?</strong><br>
+        Vous pouvez utiliser un lecteur OBD-II Bluetooth avec une application Android. La prise OBD se trouve sous le tableau de bord côté conducteur, généralement près du volant.</p>
+      </div>
+      <div>
+        <p><strong>Un code défaut = panne grave ?</strong><br>
+        Pas nécessairement. Certains codes sont mineurs (capteur légèrement hors tolérance), d'autres sont critiques (risque moteur). Cherchez votre code ici pour connaître la gravité exacte.</p>
+      </div>
+    </div>
+
+    <div class="seo-footer-bottom">
+      <span>© 2025 Diagnostic Auto — Base de données OBD-II gratuite</span>
+      <div style="display:flex;gap:16px;">
+        <a href="/privacy">Politique de confidentialité</a>
+        <a href="/download/apk" download="DiagnosticAuto.apk">Télécharger l'app Android</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
