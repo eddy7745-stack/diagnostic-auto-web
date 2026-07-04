@@ -3,6 +3,7 @@
 
 import json
 import sqlite3
+import time
 import os
 import hashlib
 import hmac
@@ -427,9 +428,23 @@ class Handler(BaseHTTPRequestHandler):
             return False
 
 
+def self_ping():
+    import urllib.request
+    import threading
+    def ping():
+        while True:
+            try:
+                urllib.request.urlopen(f"http://localhost:{PORT}/", timeout=5)
+            except Exception:
+                pass
+            time.sleep(600)
+    t = threading.Thread(target=ping, daemon=True)
+    t.start()
+
 if __name__ == "__main__":
     print(f"Diagnostic Auto — port {PORT}")
     init_purchases_db()
+    self_ping()
     # Propriétaire de l'application — accès premium permanent
     try:
         conn = get_db()
