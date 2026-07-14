@@ -5,15 +5,11 @@ import json
 import sqlite3
 import time
 import os
-import hashlib
-import hmac
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "codes.db")
 PORT = int(os.environ.get("PORT", 8080))
-STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
-
 
 OWNER_EMAIL   = "eddy7745@gmail.com"
 MAX_DEVICES   = 2
@@ -24,7 +20,7 @@ def init_purchases_db():
         CREATE TABLE IF NOT EXISTS purchases (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             email TEXT NOT NULL,
-            stripe_session_id TEXT,
+            payment_ref TEXT,
             created_at TEXT DEFAULT (datetime('now'))
         )
     """)
@@ -98,32 +94,45 @@ class Handler(BaseHTTPRequestHandler):
 
             conn = get_db()
 
-            def brand_clause(b):
-                if b == "ALL":
-                    return ""
-                return f" AND (brand = '{b}' OR brand = 'ALL')"
-
-            bc = brand_clause(brand)
+            use_brand_filter = brand != "ALL"
 
             # Exact match
-            rows = conn.execute(
-                f"SELECT *, {title_col} AS display_title FROM codes WHERE code = ?{bc} ORDER BY brand = 'ALL' ASC LIMIT ?",
-                (code, limit)
-            ).fetchall()
+            if use_brand_filter:
+                rows = conn.execute(
+                    f"SELECT *, {title_col} AS display_title FROM codes WHERE code = ? AND (brand = ? OR brand = 'ALL') ORDER BY brand = 'ALL' ASC LIMIT ?",
+                    (code, brand, limit)
+                ).fetchall()
+            else:
+                rows = conn.execute(
+                    f"SELECT *, {title_col} AS display_title FROM codes WHERE code = ? ORDER BY brand = 'ALL' ASC LIMIT ?",
+                    (code, limit)
+                ).fetchall()
 
             # Prefix match
             if not rows:
-                rows = conn.execute(
-                    f"SELECT *, {title_col} AS display_title FROM codes WHERE code LIKE ?{bc} ORDER BY code ASC LIMIT ?",
-                    (code + "%", limit)
-                ).fetchall()
+                if use_brand_filter:
+                    rows = conn.execute(
+                        f"SELECT *, {title_col} AS display_title FROM codes WHERE code LIKE ? AND (brand = ? OR brand = 'ALL') ORDER BY code ASC LIMIT ?",
+                        (code + "%", brand, limit)
+                    ).fetchall()
+                else:
+                    rows = conn.execute(
+                        f"SELECT *, {title_col} AS display_title FROM codes WHERE code LIKE ? ORDER BY code ASC LIMIT ?",
+                        (code + "%", limit)
+                    ).fetchall()
 
             # Full-text search in title
             if not rows:
-                rows = conn.execute(
-                    f"SELECT *, {title_col} AS display_title FROM codes WHERE {title_col} LIKE ?{bc} ORDER BY code ASC LIMIT ?",
-                    ("%" + code + "%", limit)
-                ).fetchall()
+                if use_brand_filter:
+                    rows = conn.execute(
+                        f"SELECT *, {title_col} AS display_title FROM codes WHERE {title_col} LIKE ? AND (brand = ? OR brand = 'ALL') ORDER BY code ASC LIMIT ?",
+                        ("%" + code + "%", brand, limit)
+                    ).fetchall()
+                else:
+                    rows = conn.execute(
+                        f"SELECT *, {title_col} AS display_title FROM codes WHERE {title_col} LIKE ? ORDER BY code ASC LIMIT ?",
+                        ("%" + code + "%", limit)
+                    ).fetchall()
 
             conn.close()
 
@@ -374,58 +383,115 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(404)
         self.end_headers()
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
+
     def do_POST(self):
         parsed = urlparse(self.path)
         path = parsed.path
-        content_length = int(self.headers.get("Content-Length", 0))
-        raw_body = self.rfile.read(content_length)
 
-        if path == "/webhook/stripe":
-            if STRIPE_WEBHOOK_SECRET:
-                sig_header = self.headers.get("Stripe-Signature", "")
-                if not self._verify_stripe_sig(raw_body, sig_header):
-                    self.send_response(400)
-                    self.end_headers()
-                    return
+        if path == "/api/diagnostic-ia":
+            length = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(length)
+            try:
+                data = json.loads(body)
+            except Exception:
+                self.send_json({"error": "invalid_json"}, 400)
+                return
+
+            code     = data.get("code", "").strip().upper()
+            title    = data.get("title", "")
+            causes   = data.get("causes", [])
+            steps    = data.get("steps", [])
+            brand    = data.get("brand", "")
+            model    = data.get("model", "")
+            year     = data.get("year", "")
+            mileage  = data.get("mileage", "")
+            symptoms = data.get("symptoms", "")
+            lang     = data.get("lang", "fr")
+
+            if not code:
+                self.send_json({"error": "missing_code"}, 400)
+                return
+
+            api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+            if not api_key:
+                self.send_json({"error": "api_key_not_configured"}, 500)
+                return
+
+            vehicle_info = ""
+            if brand or model or year or mileage:
+                parts = [x for x in [brand, model, year, (f"{mileage} km" if mileage else "")] if x]
+                vehicle_info = "Véhicule : " + " — ".join(parts) + "\n" if lang == "fr" else "Vehicle: " + " — ".join(parts) + "\n"
+
+            symptoms_info = (f"Symptômes décrits : {symptoms}\n" if symptoms else "") if lang == "fr" else (f"Described symptoms: {symptoms}\n" if symptoms else "")
+
+            if lang == "fr":
+                prompt = f"""Tu es un expert en mécanique automobile avec 20 ans d'expérience. Analyse ce code défaut OBD et donne un conseil professionnel, clair et pratique.
+
+Code défaut : {code}
+Description : {title}
+{vehicle_info}{symptoms_info}
+Causes connues : {', '.join(causes) if causes else 'Non spécifiées'}
+Étapes de diagnostic : {', '.join(steps) if steps else 'Non spécifiées'}
+
+Réponds en français avec :
+1. **Diagnostic** : explication simple de ce qui se passe
+2. **Urgence** : 🔴 Critique / 🟠 Modéré / 🟢 Mineur — et pourquoi
+3. **À faire** : les 2-3 actions concrètes à entreprendre dans l'ordre
+4. **Coût estimé** : fourchette de prix réaliste pour la réparation en France
+5. **Conseil** : astuce pro ou mise en garde importante
+
+Sois direct, pratique et professionnel. Maximum 250 mots."""
+            else:
+                prompt = f"""You are an automotive expert with 20 years of experience. Analyze this OBD fault code and give professional, clear, practical advice.
+
+Fault code: {code}
+Description: {title}
+{vehicle_info}{symptoms_info}
+Known causes: {', '.join(causes) if causes else 'Not specified'}
+Diagnostic steps: {', '.join(steps) if steps else 'Not specified'}
+
+Reply in English with:
+1. **Diagnosis**: simple explanation of what's happening
+2. **Urgency**: 🔴 Critical / 🟠 Moderate / 🟢 Minor — and why
+3. **Action**: the 2-3 concrete steps to take in order
+4. **Estimated cost**: realistic price range for the repair
+5. **Pro tip**: expert advice or important warning
+
+Be direct, practical and professional. Maximum 250 words."""
 
             try:
-                event = json.loads(raw_body)
-                if event.get("type") == "checkout.session.completed":
-                    session = event["data"]["object"]
-                    details = session.get("customer_details") or {}
-                    email = details.get("email", "").strip().lower()
-                    session_id = session.get("id", "")
-                    if email:
-                        conn = get_db()
-                        conn.execute(
-                            "INSERT OR IGNORE INTO purchases (email, stripe_session_id) VALUES (?, ?)",
-                            (email, session_id)
-                        )
-                        conn.commit()
-                        conn.close()
-            except Exception:
-                pass
-
-            self.send_json({"received": True})
+                import urllib.request
+                payload = json.dumps({
+                    "model": "claude-haiku-4-5-20251001",
+                    "max_tokens": 600,
+                    "messages": [{"role": "user", "content": prompt}]
+                }).encode()
+                req = urllib.request.Request(
+                    "https://api.anthropic.com/v1/messages",
+                    data=payload,
+                    headers={
+                        "x-api-key": api_key,
+                        "anthropic-version": "2023-06-01",
+                        "content-type": "application/json"
+                    },
+                    method="POST"
+                )
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    result = json.loads(resp.read())
+                advice = result["content"][0]["text"]
+                self.send_json({"advice": advice, "code": code})
+            except Exception as e:
+                self.send_json({"error": str(e)}, 500)
             return
 
         self.send_response(404)
         self.end_headers()
-
-    def _verify_stripe_sig(self, raw_body, sig_header):
-        try:
-            parts = dict(item.split("=", 1) for item in sig_header.split(","))
-            timestamp = parts.get("t", "")
-            v1 = parts.get("v1", "")
-            signed = f"{timestamp}.{raw_body.decode('utf-8')}"
-            expected = hmac.new(
-                STRIPE_WEBHOOK_SECRET.encode(),
-                signed.encode(),
-                hashlib.sha256
-            ).hexdigest()
-            return hmac.compare_digest(expected, v1)
-        except Exception:
-            return False
 
 
 def self_ping():
@@ -449,7 +515,7 @@ if __name__ == "__main__":
     try:
         conn = get_db()
         conn.execute(
-            "INSERT OR IGNORE INTO purchases (email, stripe_session_id) VALUES (?, ?)",
+            "INSERT OR IGNORE INTO purchases (email, payment_ref) VALUES (?, ?)",
             ("eddy7745@gmail.com", "owner")
         )
         conn.commit()
