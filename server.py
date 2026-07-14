@@ -5,7 +5,7 @@ import json
 import sqlite3
 import time
 import os
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "codes.db")
@@ -13,6 +13,7 @@ PORT = int(os.environ.get("PORT", 8080))
 
 OWNER_EMAIL   = "eddy7745@gmail.com"
 MAX_DEVICES   = 2
+IA_MONTHLY_CAP = 300  # garde-fou anti-abus par appareil (n'affecte pas un usage normal, même abonné)
 
 def init_purchases_db():
     conn = get_db()
@@ -35,8 +36,38 @@ def init_purchases_db():
         )
     """)
     conn.execute("CREATE INDEX IF NOT EXISTS activations_email ON activations(email)")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS ia_usage (
+            device_id TEXT NOT NULL,
+            month TEXT NOT NULL,
+            count INTEGER DEFAULT 0,
+            PRIMARY KEY (device_id, month)
+        )
+    """)
     conn.commit()
     conn.close()
+
+
+def ia_check_and_increment(device_id):
+    """Retourne True si l'appareil a encore du quota ce mois-ci, et incrémente."""
+    month = time.strftime("%Y-%m")
+    conn = get_db()
+    row = conn.execute(
+        "SELECT count FROM ia_usage WHERE device_id = ? AND month = ?",
+        (device_id, month)
+    ).fetchone()
+    count = row["count"] if row else 0
+    if count >= IA_MONTHLY_CAP:
+        conn.close()
+        return False
+    conn.execute(
+        "INSERT INTO ia_usage (device_id, month, count) VALUES (?, ?, 1) "
+        "ON CONFLICT(device_id, month) DO UPDATE SET count = count + 1",
+        (device_id, month)
+    )
+    conn.commit()
+    conn.close()
+    return True
 
 
 def get_db():
@@ -194,7 +225,7 @@ class Handler(BaseHTTPRequestHandler):
                 "User-agent: *\n"
                 "Allow: /\n"
                 "Disallow: /stats\n\n"
-                "Sitemap: https://diagnostic-auto.onrender.com/sitemap.xml\n"
+                "Sitemap: https://diagnostic-auto-web.onrender.com/sitemap.xml\n"
             ).encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
@@ -209,20 +240,20 @@ class Handler(BaseHTTPRequestHandler):
                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
                 '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
                 '  <url>\n'
-                '    <loc>https://diagnostic-auto.onrender.com/</loc>\n'
+                '    <loc>https://diagnostic-auto-web.onrender.com/</loc>\n'
                 '    <changefreq>monthly</changefreq>\n'
                 '    <priority>1.0</priority>\n'
-                '    <xhtml:link rel="alternate" hreflang="fr" href="https://diagnostic-auto.onrender.com/"/>\n'
-                '    <xhtml:link rel="alternate" hreflang="en" href="https://diagnostic-auto.onrender.com/?lang=en"/>\n'
+                '    <xhtml:link rel="alternate" hreflang="fr" href="https://diagnostic-auto-web.onrender.com/"/>\n'
+                '    <xhtml:link rel="alternate" hreflang="en" href="https://diagnostic-auto-web.onrender.com/?lang=en"/>\n'
                 '  </url>\n'
                 '  <url>\n'
-                '    <loc>https://diagnostic-auto.onrender.com/privacy</loc>\n'
+                '    <loc>https://diagnostic-auto-web.onrender.com/privacy</loc>\n'
                 '    <changefreq>yearly</changefreq>\n'
                 '    <priority>0.3</priority>\n'
                 '  </url>\n'
                 + ''.join(
                     f'  <url>\n'
-                    f'    <loc>https://diagnostic-auto.onrender.com/?code={c}</loc>\n'
+                    f'    <loc>https://diagnostic-auto-web.onrender.com/?code={c}</loc>\n'
                     f'    <changefreq>yearly</changefreq>\n'
                     f'    <priority>0.8</priority>\n'
                     f'  </url>\n'
@@ -418,6 +449,14 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_json({"error": "missing_code"}, 400)
                 return
 
+            device_id = data.get("device_id", "").strip()
+            if not device_id:
+                self.send_json({"error": "missing_device_id"}, 400)
+                return
+            if not ia_check_and_increment(device_id):
+                self.send_json({"error": "rate_limited"}, 429)
+                return
+
             api_key = os.environ.get("ANTHROPIC_API_KEY", "")
             if not api_key:
                 self.send_json({"error": "api_key_not_configured"}, 500)
@@ -522,4 +561,4 @@ if __name__ == "__main__":
         conn.close()
     except Exception:
         pass
-    HTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
