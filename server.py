@@ -220,6 +220,15 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(body)
             return
 
+        if path == "/app-ads.txt":
+            body = b"google.com, pub-3003334283248427, DIRECT, f08c47fec0942fa0\n"
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
         if path == "/robots.txt":
             body = (
                 "User-agent: *\n"
