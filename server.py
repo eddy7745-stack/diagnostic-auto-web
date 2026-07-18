@@ -2,6 +2,7 @@
 """Serveur diagnostic automobile — python3 server.py"""
 
 import json
+import re
 import sqlite3
 import time
 import os
@@ -211,6 +212,100 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json({"results": results, "total": len(results)})
             return
 
+        # ── Pages SEO par code défaut : /code/P0300 ─────────────────────────
+        if path.startswith("/code/"):
+            code = path[6:].strip().upper().replace(".HTML", "")
+            if not re.fullmatch(r"[PCBU][0-3][0-9A-F]{3}", code):
+                self.send_response(404); self.end_headers(); return
+            conn = get_db()
+            rows = conn.execute(
+                "SELECT * FROM codes WHERE code = ? ORDER BY brand = 'ALL' DESC LIMIT 6",
+                (code,)).fetchall()
+            conn.close()
+            if not rows:
+                self.send_response(404); self.end_headers(); return
+            r = rows[0]
+            title  = (r["title_fr"] or r["title"]) if "title_fr" in r.keys() else r["title"]
+            causes = json.loads(r["causes"] or "[]")
+            steps  = json.loads(r["steps"] or "[]")
+            sev    = {"low": "Faible", "medium": "Moyenne", "high": "Élevée", "critical": "Critique"}.get(r["severity"], "Moyenne")
+            sev_color = {"low": "#22c55e", "medium": "#f97316", "high": "#ef4444", "critical": "#ef4444"}.get(r["severity"], "#f97316")
+            variants = [v for v in rows[1:] if v["brand"] != "ALL"]
+            esc = lambda t: t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            causes_html = "".join(f"<li>{esc(c)}</li>" for c in causes) or "<li>Consultez l'application pour le détail.</li>"
+            steps_html  = "".join(f"<li>{esc(st)}</li>" for st in steps) or "<li>Scannez votre véhicule avec l'application.</li>"
+            variants_html = ""
+            if variants:
+                items = "".join(
+                    f"<li><strong>{esc(v['brand'])}</strong> : {esc((v['title_fr'] or v['title']) if 'title_fr' in v.keys() else v['title'])}</li>"
+                    for v in variants)
+                variants_html = f"<h2>Signification spécifique par constructeur</h2><ul>{items}</ul>"
+            meta_desc = esc(f"Code défaut {code} : {title}. Causes possibles, gravité et étapes de réparation. Diagnostiquez gratuitement avec l'application Diagnostic Auto.")[:250]
+            body = f"""<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code défaut {code} : {esc(title)} — signification et réparation</title>
+<meta name="description" content="{meta_desc}">
+<link rel="canonical" href="https://diagnostic-auto-web.onrender.com/code/{code}">
+<script type="application/ld+json">{json.dumps({
+    "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [{
+        "@type": "Question", "name": f"Que signifie le code défaut {code} ?",
+        "acceptedAnswer": {"@type": "Answer", "text": f"{code} : {title}. Gravité : {sev}."}
+    }, {
+        "@type": "Question", "name": f"Quelles sont les causes du code {code} ?",
+        "acceptedAnswer": {"@type": "Answer", "text": " ; ".join(causes) or "Voir l'application Diagnostic Auto."}
+    }]}, ensure_ascii=False)}</script>
+<style>
+body{{margin:0;font-family:-apple-system,'Segoe UI',Roboto,sans-serif;background:#0f1117;color:#e2e8f0;line-height:1.6}}
+.wrap{{max-width:760px;margin:0 auto;padding:24px 20px 60px}}
+a{{color:#60a5fa}} h1{{font-size:1.6rem;line-height:1.3}} h2{{color:#60a5fa;font-size:1.15rem;margin-top:28px}}
+.code{{font-family:Menlo,monospace;color:#60a5fa}}
+.sev{{display:inline-block;background:{sev_color}22;color:{sev_color};border-radius:8px;padding:3px 12px;font-weight:700;font-size:.9rem}}
+ul{{padding-left:22px}} li{{margin-bottom:6px}}
+.cta{{background:#1a1d27;border:1px solid #2d3452;border-radius:14px;padding:22px;margin-top:34px;text-align:center}}
+.play{{display:inline-block;background:#3b82f6;color:#fff;font-weight:700;border-radius:10px;padding:13px 26px;text-decoration:none;margin-top:10px}}
+.top{{color:#94a3b8;font-size:.9rem}}
+</style></head><body><div class="wrap">
+<p class="top"><a href="/">← Diagnostic Auto</a></p>
+<h1>Code défaut <span class="code">{code}</span><br>{esc(title)}</h1>
+<p>Gravité : <span class="sev">{sev}</span></p>
+<h2>Causes possibles</h2><ul>{causes_html}</ul>
+<h2>Étapes de diagnostic</h2><ol>{steps_html}</ol>
+{variants_html}
+<div class="cta">
+  <strong>🔧 Diagnostiquez votre voiture vous-même</strong>
+  <p style="color:#94a3b8;font-size:.95rem">Scannez vos codes défauts en Bluetooth (ELM327), obtenez des conseils IA personnalisés et suivez vos véhicules — gratuitement.</p>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.diagnosticauto.app">📲 Télécharger sur Google Play</a>
+</div>
+</div></body></html>"""
+            body = body.encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.send_header("Cache-Control", "public, max-age=86400")
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
+        if path == "/sitemap-codes.xml":
+            conn = get_db()
+            codes_list = [row[0] for row in conn.execute("SELECT DISTINCT code FROM codes ORDER BY code")
+                          if re.fullmatch(r"[PCBU][0-3][0-9A-F]{3}", row[0])]
+            conn.close()
+            urls = "".join(
+                f"<url><loc>https://diagnostic-auto-web.onrender.com/code/{c}</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>"
+                for c in codes_list)
+            body = (f'<?xml version="1.0" encoding="UTF-8"?>\n'
+                    f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>').encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/xml; charset=utf-8")
+            self.send_header("Content-Length", len(body))
+            self.send_header("Cache-Control", "public, max-age=86400")
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
         if path == "/download/apk":
             apk_path = os.path.join(os.path.dirname(__file__), "DiagnosticAuto.apk")
             if not os.path.exists(apk_path):
@@ -251,6 +346,7 @@ class Handler(BaseHTTPRequestHandler):
                 "Allow: /\n"
                 "Disallow: /stats\n\n"
                 "Sitemap: https://diagnostic-auto-web.onrender.com/sitemap.xml\n"
+                "Sitemap: https://diagnostic-auto-web.onrender.com/sitemap-codes.xml\n"
             ).encode()
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")

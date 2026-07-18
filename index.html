@@ -60,7 +60,7 @@
         "priceCurrency": "EUR"
       },
       "description": "Application Android de diagnostic automobile avec 16 990 codes OBD-II. Fonctionne hors-ligne, gratuit.",
-      "downloadUrl": "https://diagnostic-auto.onrender.com/download/apk"
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.diagnosticauto.app"
     },
     {
       "@type": "FAQPage",
@@ -280,11 +280,11 @@
       </div>
     </div>
     <div class="app-btn-group">
-      <a class="app-btn android" href="/download/apk" download="DiagnosticAuto.apk">
-        <span class="btn-icon">🤖</span>
+      <a class="app-btn android" href="https://play.google.com/store/apps/details?id=com.diagnosticauto.app">
+        <span class="btn-icon">▶</span>
         <span class="btn-label">
-          <span class="btn-small" id="btn-android-small">Télécharger</span>
-          <span>Android APK</span>
+          <span class="btn-small" id="btn-android-small">Disponible sur</span>
+          <span>Google Play</span>
         </span>
       </a>
       <a class="app-btn" href="https://buy.stripe.com/7sY8wI8Ho0b36S8agRgrS00" target="_blank">
@@ -308,7 +308,7 @@
     <div class="qr-arrow">→</div>
     <div>
       <div class="qr-text-title" id="qr-title">📲 Téléchargez l'application</div>
-      <div class="qr-text-sub" id="qr-sub">Scannez ce QR code avec votre téléphone<br>pour télécharger l'APK Android directement.</div>
+      <div class="qr-text-sub" id="qr-sub">Scannez ce QR code avec votre téléphone<br>pour installer l'app depuis Google Play.</div>
     </div>
   </div>
 
@@ -342,8 +342,8 @@
       <span class="app-exclusive-feat" id="excl-f3">📴 100% hors-ligne</span>
       <span class="app-exclusive-feat" id="excl-f4">⭐ Premium</span>
     </div>
-    <a class="app-exclusive-btn" href="/download/apk" download="DiagnosticAuto.apk">
-      <span>🤖</span> <span id="excl-btn">Télécharger l'application Android</span>
+    <a class="app-exclusive-btn" href="https://play.google.com/store/apps/details?id=com.diagnosticauto.app">
+      <span>▶</span> <span id="excl-btn">Télécharger sur Google Play</span>
     </a>
   </div>
 </div>
@@ -354,12 +354,12 @@ const T = {
   fr: {
     bannerTitle:       'Diagnostic Auto — Application mobile',
     bannerSub:         '16 990 codes • Fonctionne hors-ligne • Gratuit',
-    bannerAndroid:     'Télécharger',
+    bannerAndroid:     'Disponible sur',
     bannerPremiumSmall:'Accès complet',
     bannerPremium:     'Premium 3,99 €',
     tagline:           'Site web 100% gratuit — emportez l\'app dans votre garage',
     qrTitle:           '📲 Téléchargez l\'application',
-    qrSub:             'Scannez ce QR code avec votre téléphone<br>pour télécharger l\'APK Android directement.',
+    qrSub:             'Scannez ce QR code avec votre téléphone<br>pour installer l\'app depuis Google Play.',
     headerSub:    'Recherchez n\'importe quel code défaut OBD-II ou constructeur',
     searchTitle:  'Entrez un code défaut',
     searchBtn:    'Rechercher',
@@ -381,17 +381,17 @@ const T = {
     exclTitle: 'Analyse multi-codes — exclusif application',
     exclDesc:  'Entrez tous vos codes défauts d\'un coup et obtenez un verdict instantané : est-ce dangereux ? Par quoi commencer ? L\'app analyse, priorise et vous conseille.',
     exclF1: '🔴 Verdict immédiat', exclF2: '⚡ Ordre de priorité', exclF3: '📴 100% hors-ligne', exclF4: '⭐ Premium',
-    exclBtn: 'Télécharger l\'application Android',
+    exclBtn: 'Télécharger sur Google Play',
   },
   en: {
     bannerTitle:       'Diagnostic Auto — Mobile App',
     bannerSub:         '16,990 codes • Works offline • Free',
-    bannerAndroid:     'Download',
+    bannerAndroid:     'Get it on',
     bannerPremiumSmall:'Full access',
     bannerPremium:     'Premium €3.99',
     tagline:           '100% free website — take the app to your garage',
     qrTitle:           '📲 Download the app',
-    qrSub:             'Scan this QR code with your phone<br>to download the Android APK directly.',
+    qrSub:             'Scan this QR code with your phone<br>to install the app from Google Play.',
     headerSub:    'Search any OBD-II or manufacturer fault code',
     searchTitle:  'Enter a fault code',
     searchBtn:    'Search',
@@ -413,7 +413,7 @@ const T = {
     exclTitle: 'Multi-code analysis — app exclusive',
     exclDesc:  'Enter all your fault codes at once and get an instant verdict: is it dangerous? What to fix first? The app analyses, prioritises and advises you.',
     exclF1: '🔴 Instant verdict', exclF2: '⚡ Priority order', exclF3: '📴 100% offline', exclF4: '⭐ Premium',
-    exclBtn: 'Download the Android app',
+    exclBtn: 'Get it on Google Play',
   },
 };
 
@@ -607,7 +607,7 @@ function renderCard(e) {
 
 // ── QR Code (pure JS, no lib) ─────────────────────────────────────────────
 // Uses the Google Charts API to render a QR code as an image on the canvas
-const APK_URL = 'https://expo.dev/accounts/diagauto/projects/diagnostic-auto/builds';
+const APK_URL = 'https://play.google.com/store/apps/details?id=com.diagnosticauto.app';
 
 function buildQR() {
   const img = document.getElementById('qr-img');
@@ -687,7 +687,7 @@ buildQR();
         <h2>Application Android</h2>
         <p>Téléchargez l'application <strong>Diagnostic Auto</strong> pour Android et consultez tous les codes défauts <strong>hors-ligne</strong>, directement dans votre garage, sans connexion internet.</p>
         <p>Fonctionnalité exclusive : analyse multi-codes avec verdict de priorité et conseils de réparation.</p>
-        <a href="/download/apk" download="DiagnosticAuto.apk" style="color:var(--accent2);text-decoration:none;">⬇ Télécharger l'APK Android gratuitement</a>
+        <a href="https://play.google.com/store/apps/details?id=com.diagnosticauto.app" style="color:var(--accent2);text-decoration:none;">▶ Télécharger sur Google Play</a><br><a href="/download/apk" download="DiagnosticAuto.apk" style="color:var(--muted,#94a3b8);font-size:.85rem;text-decoration:none;">⬇ Installation directe (APK) — sans services Google</a>
       </div>
     </div>
 
@@ -759,7 +759,7 @@ buildQR();
       <span>© 2025 Diagnostic Auto — Base de données OBD-II gratuite</span>
       <div style="display:flex;gap:16px;">
         <a href="/privacy">Politique de confidentialité</a>
-        <a href="/download/apk" download="DiagnosticAuto.apk">Télécharger l'app Android</a>
+        <a href="https://play.google.com/store/apps/details?id=com.diagnosticauto.app">Télécharger l'app Android</a>
       </div>
     </div>
   </div>
