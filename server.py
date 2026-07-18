@@ -98,6 +98,22 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def do_HEAD(self):
+        # Répond comme GET (statut + headers) mais sans corps — requis par
+        # certains crawlers (AdMob app-ads.txt, Googlebot) qui sondent en HEAD.
+        class _NullWriter:
+            def write(self, *_): pass
+            def flush(self): pass
+
+        real_end_headers = self.end_headers
+
+        def end_headers_then_mute():
+            real_end_headers()
+            self.wfile = _NullWriter()
+
+        self.end_headers = end_headers_then_mute
+        self.do_GET()
+
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
