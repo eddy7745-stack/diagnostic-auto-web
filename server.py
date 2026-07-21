@@ -289,15 +289,7 @@ ul{{padding-left:22px}} li{{margin-bottom:6px}}
             return
 
         if path == "/sitemap-codes.xml":
-            conn = get_db()
-            codes_list = [row[0] for row in conn.execute("SELECT DISTINCT code FROM codes ORDER BY code")
-                          if re.fullmatch(r"[PCBU][0-3][0-9A-F]{3}", row[0])]
-            conn.close()
-            urls = "".join(
-                f"<url><loc>https://diagnostic-auto-web.onrender.com/code/{c}</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>"
-                for c in codes_list)
-            body = (f'<?xml version="1.0" encoding="UTF-8"?>\n'
-                    f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>').encode()
+            body = SITEMAP_CODES_CACHE
             self.send_response(200)
             self.send_header("Content-Type", "application/xml; charset=utf-8")
             self.send_header("Content-Length", len(body))
@@ -654,6 +646,19 @@ Be direct, practical and professional. Maximum 250 words."""
         self.end_headers()
 
 
+def build_sitemap_cache():
+    conn = get_db()
+    codes_list = [row[0] for row in conn.execute("SELECT DISTINCT code FROM codes ORDER BY code")
+                  if re.fullmatch(r"[PCBU][0-3][0-9A-F]{3}", row[0])]
+    conn.close()
+    urls = "".join(
+        f"<url><loc>https://diagnostic-auto-web.onrender.com/code/{c}</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>"
+        for c in codes_list)
+    return (f'<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>').encode()
+
+SITEMAP_CODES_CACHE = b""  # initialisé au démarrage
+
 def self_ping():
     import urllib.request
     import threading
@@ -670,6 +675,9 @@ def self_ping():
 if __name__ == "__main__":
     print(f"Diagnostic Auto — port {PORT}")
     init_purchases_db()
+    global SITEMAP_CODES_CACHE
+    SITEMAP_CODES_CACHE = build_sitemap_cache()
+    print(f"Sitemap codes chargé : {len(SITEMAP_CODES_CACHE)} octets")
     self_ping()
     # Propriétaire de l'application — accès premium permanent
     try:
