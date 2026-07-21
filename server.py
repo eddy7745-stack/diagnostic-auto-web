@@ -675,7 +675,6 @@ def self_ping():
 if __name__ == "__main__":
     print(f"Diagnostic Auto — port {PORT}")
     init_purchases_db()
-    global SITEMAP_CODES_CACHE
     SITEMAP_CODES_CACHE = build_sitemap_cache()
     print(f"Sitemap codes chargé : {len(SITEMAP_CODES_CACHE)} octets")
     self_ping()
